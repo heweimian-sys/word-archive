@@ -1475,7 +1475,7 @@ svg { display: block; }
   position: absolute;
   width: 78px;
   height: 78px;
-  background: url("../corner.svg") center / contain no-repeat;
+  background: none center / contain no-repeat;
   opacity: 1;
   filter: drop-shadow(0 0 1px rgba(184, 147, 78, .55));
 }
@@ -1494,7 +1494,7 @@ svg { display: block; }
   width: min(190px, 44%);
   height: 34px;
   z-index: 5;
-  background: url("../crest.svg") center / contain no-repeat;
+  background: none center / contain no-repeat;
   filter: drop-shadow(0 1px 2px rgba(255, 255, 255, .9));
 }
 
@@ -1600,7 +1600,7 @@ svg { display: block; }
    ========================================================================== */
 
 body:not([data-view="home"]) .bg-art {
-  background-image: url("../hero-art.jpg");
+  background-image: url("../lobby-art.jpg");
   background-position: center 42%;
   opacity: 1;
   animation: none;
@@ -1636,7 +1636,7 @@ body:not([data-view="home"]) .bg-veil {
   position: absolute;
   width: 58px;
   height: 58px;
-  background: url("../corner.svg") center / contain no-repeat;
+  background: none center / contain no-repeat;
   opacity: .5;
   pointer-events: none;
 }
