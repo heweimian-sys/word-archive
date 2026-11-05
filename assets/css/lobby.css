@@ -881,3 +881,167 @@ body:not([data-view="home"]) .option .opt-key {
   border-color: rgba(122, 82, 34, .62) !important;
   font-weight: 700 !important;
 }
+
+/* ==========================================================================
+   字体清晰度总修
+   1) 真正加载 Noto Serif SC / Inter 之后，统一提高字重下限；
+   2) 去掉所有次要文字的半透明，改为不透明深色——半透明叠在浅底上会变浅；
+   3) 关闭会削弱笔画的表现方式，保证小字也扎实。
+   ========================================================================== */
+
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+
+/* —— 首页 —— */
+body[data-view="home"] .brand { color: #16233f !important; font-weight: 700 !important; }
+body[data-view="home"] .date { color: #16233f !important; font-weight: 700 !important; }
+body[data-view="home"] .title-kicker { color: #6d4519 !important; font-weight: 700 !important; }
+body[data-view="home"] .title-main { color: #101c30 !important; font-weight: 700 !important; }
+body[data-view="home"] .title-sub { color: #1c2a4d !important; font-weight: 600 !important; }
+body[data-view="home"] .cta-hint { color: #1c2a4d !important; font-weight: 600 !important; }
+body[data-view="home"] .cta-label { color: #101c30 !important; font-weight: 700 !important; }
+body[data-view="home"] .lang-switch button { color: #3d4d6b !important; font-weight: 600 !important; }
+body[data-view="home"] .lang-switch button[aria-pressed="true"] { color: #6d4519 !important; font-weight: 700 !important; }
+
+/* —— 菜单：全部改为不透明墨色 —— */
+.menu-en { color: #16233f !important; font-weight: 700 !important; text-shadow: none !important; }
+.menu-zh { color: #3d4d6b !important; font-weight: 600 !important; text-shadow: none !important; }
+.menu-state { color: #6d4519 !important; font-weight: 700 !important; }
+.menu-state.is-done { color: #1f6b48 !important; }
+
+/* —— 内页：所有半透明文字改为不透明 —— */
+body:not([data-view="home"]) .panel-title { color: #101c30 !important; font-weight: 700 !important; }
+body:not([data-view="home"]) .panel-lead { color: #2f3f5c !important; font-weight: 500 !important; }
+body:not([data-view="home"]) .q-def { color: #101c30 !important; font-weight: 600 !important; }
+body:not([data-view="home"]) .q-cat { color: #6d4519 !important; font-weight: 700 !important; }
+body:not([data-view="home"]) .rule-list li { color: #2f3f5c !important; font-weight: 500 !important; }
+body:not([data-view="home"]) .rule-list b { color: #6d4519 !important; }
+body:not([data-view="home"]) .option { color: #101c30 !important; font-weight: 600 !important; }
+body:not([data-view="home"]) .option .opt-key { color: #4a3010 !important; font-weight: 700 !important; }
+body:not([data-view="home"]) .option.is-correct { color: #17543a !important; }
+body:not([data-view="home"]) .option.is-wrong { color: #7a2a22 !important; }
+body:not([data-view="home"]) .quiz-meta,
+body:not([data-view="home"]) .fineprint,
+body:not([data-view="home"]) .kbd-hint { color: #3d4d6b !important; font-weight: 500 !important; }
+body:not([data-view="home"]) .review summary { color: #2f3f5c !important; font-weight: 600 !important; }
+body:not([data-view="home"]) .review-list li { color: #2f3f5c !important; }
+body:not([data-view="home"]) .result-sub,
+body:not([data-view="home"]) .result-score-unit { color: #3d4d6b !important; font-weight: 600 !important; }
+body:not([data-view="home"]) .result-grade { color: #6d4519 !important; }
+body:not([data-view="home"]) .result-score-num { color: #101c30 !important; }
+body:not([data-view="home"]) .result-line { color: #2f3f5c !important; }
+body:not([data-view="home"]) .word-card .wc-term { color: #101c30 !important; font-weight: 700 !important; }
+body:not([data-view="home"]) .word-card .wc-en { color: #6d4519 !important; font-weight: 600 !important; }
+body:not([data-view="home"]) .word-card .wc-def { color: #2f3f5c !important; font-weight: 500 !important; }
+body:not([data-view="home"]) .arch-cell .ac-date { color: #101c30 !important; font-weight: 700 !important; }
+body:not([data-view="home"]) .arch-cell .ac-meta { color: #2f3f5c !important; font-weight: 500 !important; }
+body:not([data-view="home"]) .arch-words .aw-def { color: #2f3f5c !important; }
+body:not([data-view="home"]) .board-name { color: #101c30 !important; font-weight: 700 !important; }
+body:not([data-view="home"]) .board-score small { color: #2f3f5c !important; }
+body:not([data-view="home"]) .chip { color: #2f3f5c !important; font-weight: 600 !important; }
+body:not([data-view="home"]) .chip.is-active { color: #3a2508 !important; font-weight: 700 !important; }
+body:not([data-view="home"]) .search input { color: #101c30 !important; }
+body:not([data-view="home"]) .search input::placeholder { color: #56657f !important; opacity: 1 !important; }
+body:not([data-view="home"]) .btn-ghost,
+body:not([data-view="home"]) .ghost-btn { color: #2f3f5c !important; font-weight: 600 !important; }
+body:not([data-view="home"]) .tab-btn { color: #4a5875 !important; font-weight: 600 !important; }
+body:not([data-view="home"]) .tab-btn.is-active { color: #5d3f13 !important; font-weight: 700 !important; }
+body:not([data-view="home"]) .modal-title { color: #101c30 !important; font-weight: 700 !important; }
+body:not([data-view="home"]) .modal-def { color: #2f3f5c !important; }
+body:not([data-view="home"]) .modal-usage { color: #2f3f5c !important; }
+body:not([data-view="home"]) .modal-tags span { color: #2f3f5c !important; }
+body:not([data-view="home"]) .modal-foot { color: #3d4d6b !important; }
+
+/* 输入框占位符在首页也可能出现 */
+::placeholder { opacity: 1 !important; }
+
+/* ==========================================================================
+   最终修：字重与颜色（不依赖网络字体）
+   国内访问 Google Fonts 不稳定，字体常回退导致笔画发虚发细。
+   这里改为系统字体栈优先，并把正文推到近黑色、字重下限提高一档。
+   ========================================================================== */
+
+:root {
+  --font-display: "Songti SC", "STSong", "Hiragino Mincho ProN", "Noto Serif SC", Georgia, serif;
+  --font-ui: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+             "Microsoft YaHei", "Segoe UI", sans-serif;
+}
+
+/* —— 首页 —— */
+body[data-view="home"] .brand,
+body[data-view="home"] .date { color: #0d1626 !important; font-weight: 700 !important; font-family: var(--font-ui) !important; }
+body[data-view="home"] .title-kicker { color: #5a3a10 !important; font-weight: 700 !important; font-family: var(--font-ui) !important; }
+body[data-view="home"] .title-main { color: #0a1220 !important; font-weight: 700 !important; font-family: var(--font-display) !important; }
+body[data-view="home"] .title-sub { color: #15233c !important; font-weight: 600 !important; font-family: var(--font-ui) !important; }
+body[data-view="home"] .cta-label { color: #0a1220 !important; font-weight: 700 !important; }
+body[data-view="home"] .cta-hint { color: #15233c !important; font-weight: 600 !important; }
+body[data-view="home"] .lang-switch button { color: #24344f !important; font-weight: 600 !important; }
+body[data-view="home"] .lang-switch button[aria-pressed="true"] { color: #5a3a10 !important; font-weight: 700 !important; }
+
+/* —— 菜单 —— */
+.menu-en { color: #0a1220 !important; font-weight: 700 !important; font-family: var(--font-display) !important; }
+.menu-zh { color: #24344f !important; font-weight: 600 !important; font-family: var(--font-ui) !important; }
+.menu-state { color: #5a3a10 !important; font-weight: 700 !important; font-family: var(--font-ui) !important; }
+.menu-state.is-done { color: #14563a !important; }
+
+/* —— 内页通用：正文近黑 —— */
+body:not([data-view="home"]) { font-family: var(--font-ui); }
+body:not([data-view="home"]) .panel-title { color: #0a1220 !important; font-weight: 700 !important; font-family: var(--font-display) !important; }
+body:not([data-view="home"]) .panel-lead { color: #1f2f49 !important; font-weight: 500 !important; }
+body:not([data-view="home"]) .q-def { color: #0a1220 !important; font-weight: 600 !important; font-family: var(--font-display) !important; }
+body:not([data-view="home"]) .q-cat { color: #5a3a10 !important; font-weight: 700 !important; }
+body:not([data-view="home"]) .rule-list li { color: #1f2f49 !important; font-weight: 500 !important; }
+body:not([data-view="home"]) .rule-list b { color: #5a3a10 !important; font-weight: 700 !important; }
+body:not([data-view="home"]) .option { color: #0a1220 !important; font-weight: 600 !important; }
+body:not([data-view="home"]) .option .opt-key { color: #3d250a !important; font-weight: 700 !important; }
+body:not([data-view="home"]) .option.is-correct { color: #0f4a30 !important; }
+body:not([data-view="home"]) .option.is-wrong { color: #6d211a !important; }
+body:not([data-view="home"]) .quiz-meta,
+body:not([data-view="home"]) .fineprint,
+body:not([data-view="home"]) .kbd-hint { color: #24344f !important; font-weight: 500 !important; }
+body:not([data-view="home"]) .review summary { color: #1f2f49 !important; font-weight: 600 !important; }
+body:not([data-view="home"]) .review-list li { color: #1f2f49 !important; }
+body:not([data-view="home"]) .result-sub,
+body:not([data-view="home"]) .result-score-unit { color: #24344f !important; font-weight: 600 !important; }
+body:not([data-view="home"]) .result-grade { color: #5a3a10 !important; font-weight: 700 !important; }
+body:not([data-view="home"]) .result-score-num { color: #0a1220 !important; font-weight: 700 !important; }
+body:not([data-view="home"]) .result-line { color: #1f2f49 !important; }
+body:not([data-view="home"]) .word-card .wc-term { color: #0a1220 !important; font-weight: 700 !important; font-family: var(--font-display) !important; }
+body:not([data-view="home"]) .word-card .wc-en { color: #5a3a10 !important; font-weight: 600 !important; }
+body:not([data-view="home"]) .word-card .wc-def { color: #1f2f49 !important; font-weight: 500 !important; }
+body:not([data-view="home"]) .arch-cell .ac-date { color: #0a1220 !important; font-weight: 700 !important; }
+body:not([data-view="home"]) .arch-cell .ac-meta { color: #1f2f49 !important; font-weight: 500 !important; }
+body:not([data-view="home"]) .arch-words .aw-def { color: #1f2f49 !important; }
+body:not([data-view="home"]) .board-name { color: #0a1220 !important; font-weight: 700 !important; }
+body:not([data-view="home"]) .board-score small { color: #1f2f49 !important; }
+body:not([data-view="home"]) .chip { color: #1f2f49 !important; font-weight: 600 !important; }
+body:not([data-view="home"]) .chip.is-active { color: #2e1c04 !important; font-weight: 700 !important; }
+body:not([data-view="home"]) .search input { color: #0a1220 !important; }
+body:not([data-view="home"]) .search input::placeholder { color: #3d4d6b !important; opacity: 1 !important; }
+body:not([data-view="home"]) .btn-ghost,
+body:not([data-view="home"]) .ghost-btn { color: #1f2f49 !important; font-weight: 600 !important; }
+body:not([data-view="home"]) .tab-btn { color: #24344f !important; font-weight: 600 !important; }
+body:not([data-view="home"]) .tab-btn.is-active { color: #4a3010 !important; font-weight: 700 !important; }
+body:not([data-view="home"]) .modal-title { color: #0a1220 !important; font-weight: 700 !important; font-family: var(--font-display) !important; }
+body:not([data-view="home"]) .modal-def,
+body:not([data-view="home"]) .modal-usage,
+body:not([data-view="home"]) .modal-tags span { color: #1f2f49 !important; }
+body:not([data-view="home"]) .modal-foot { color: #24344f !important; }
+
+/* 档案日期小字：取消旧主题的半透明浅蓝 */
+body:not([data-view="home"]) .arch-cell .ac-meta,
+body:not([data-view="home"]) .arch-cell.is-played .ac-meta {
+  color: #3d4d6b !important;
+  opacity: 1 !important;
+  font-weight: 600 !important;
+}
+
+/* 档案页所有日期与范围文字：统一使用不透明深色 */
+#arch-range,
+.arch-cell .ac-date,
+.arch-cell .ac-meta,
+.arch-cell span,
+.arch-cell small {
+  color: #24344f !important;
+  opacity: 1 !important;
+  font-weight: 600 !important;
+}
