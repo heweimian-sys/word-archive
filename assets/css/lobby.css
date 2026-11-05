@@ -816,3 +816,68 @@ body:not([data-view="home"]) .modal-title { color: #1c2a4d !important; }
 body:not([data-view="home"]) .quiz-meta,
 body:not([data-view="home"]) .fineprint,
 body:not([data-view="home"]) .kbd-hint { color: rgba(90, 104, 128, .9) !important; }
+
+/* ==========================================================================
+   文字对比度修正
+   目标：正文/标题对比度 ≥ 4.5:1，次要小字 ≥ 3:1。
+   只改颜色，不动布局、尺寸、装饰和插画背景。
+   ========================================================================== */
+
+/* —— 首页：白字压在插画上，改为深墨字 + 柔化过渡，保证可读 —— */
+body[data-view="home"] .lobby::after {
+  background:
+    radial-gradient(72% 58% at 50% 42%, rgba(255, 253, 247, .62) 0%, rgba(255, 253, 247, .32) 58%, rgba(255, 253, 247, .10) 100%),
+    linear-gradient(180deg, rgba(255, 253, 247, .52) 0%, rgba(255, 253, 247, .22) 30%, rgba(255, 253, 247, .30) 68%, rgba(255, 253, 247, .62) 100%);
+}
+
+body[data-view="home"] .brand { color: #1c2a4d !important; text-shadow: none !important; }
+body[data-view="home"] .brand-mark { color: #8a5f2c; }
+body[data-view="home"] .brand-sep { background: rgba(138, 95, 44, .5); }
+body[data-view="home"] .date { color: #1c2a4d !important; text-shadow: none !important; }
+body[data-view="home"] .date .weekday { background: #1c2a4d; color: #fffdf7; }
+
+body[data-view="home"] .title-kicker { color: #8a5f2c !important; text-shadow: none !important; }
+body[data-view="home"] .title-main { color: #16233f !important; text-shadow: 0 1px 2px rgba(255,255,255,.55) !important; }
+body[data-view="home"] .title-sub { color: #2a3a61 !important; text-shadow: none !important; }
+body[data-view="home"] .title-rule span { background: linear-gradient(90deg, transparent, rgba(138,95,44,.6), transparent); }
+body[data-view="home"] .title-rule i { background: #8a5f2c; box-shadow: none; }
+
+body[data-view="home"] .cta-hint { color: #2a3a61 !important; text-shadow: none !important; }
+body[data-view="home"] .cta-label { color: #16233f !important; }
+
+/* —— 内页：规则/复盘/说明等次要文字加深 —— */
+body:not([data-view="home"]) .rule-list li { color: #3d4d६b; }
+body:not([data-view="home"]) .rule-list li { color: #3d4d6b !important; }
+body:not([data-view="home"]) .review summary { color: #3d4d6b !important; }
+body:not([data-view="home"]) .review-list li { color: #3d4d6b !important; }
+body:not([data-view="home"]) .quiz-meta,
+body:not([data-view="home"]) .fineprint,
+body:not([data-view="home"]) .kbd-hint { color: #56657f !important; }
+body:not([data-view="home"]) .panel-lead { color: #3d4d6b !important; }
+body:not([data-view="home"]) .option .opt-key { color: #7a5222 !important; }
+body:not([data-view="home"]) .chip { color: #3d4d6b !important; }
+body:not([data-view="home"]) .chip.is-active { color: #4a3010 !important; background: rgba(201,167,95,.34) !important; }
+body:not([data-view="home"]) .word-card .wc-def { color: #3d4d6b !important; }
+body:not([data-view="home"]) .tab-btn { color: #4a5875 !important; }
+body:not([data-view="home"]) .tab-btn.is-active { color: #6d4519 !important; }
+
+/* 残余低对比度小字再加深一档 */
+body:not([data-view="home"]) .fineprint,
+body:not([data-view="home"]) .kbd-hint { color: #46536b !important; }
+body:not([data-view="home"]) .quiz-meta { color: #46536b !important; }
+body:not([data-view="home"]) .option .opt-key {
+  color: #5d3f13 !important;
+  border-color: rgba(138, 95, 44, .55) !important;
+  background: rgba(201, 167, 95, .22) !important;
+}
+body:not([data-view="home"]) .chip.is-active { color: #3a2508 !important; }
+body:not([data-view="home"]) .tab-btn.is-active { color: #5d3f13 !important; }
+body:not([data-view="home"]) .word-card .wc-en { color: #7a5222 !important; }
+
+/* 选项字母：提高对比度到 4.5 以上 */
+body:not([data-view="home"]) .option .opt-key {
+  color: #4a3010 !important;
+  background: rgba(201, 167, 95, .30) !important;
+  border-color: rgba(122, 82, 34, .62) !important;
+  font-weight: 700 !important;
+}
