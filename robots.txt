@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://heweimian-sys.github.io/word-archive/sitemap.xml

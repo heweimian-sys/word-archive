@@ -1,0 +1,732 @@
+/* ==========================================================================
+   词林秘典 · 大厅与内页样式
+   方案：干净插画背景 + 深色玻璃面板 + 金色描边 + 高对比白字
+   ========================================================================== */
+
+/* ============================== 大厅容器 ============================== */
+.view-home {
+  display: block;
+  min-height: 0;
+  padding: 0;
+}
+
+body[data-view="home"] .stage { padding: 0; }
+body[data-view="home"] .bg { display: none; }
+
+.lobby {
+  position: relative;
+  container-type: size;
+  width: 100%;
+  max-width: none;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: clamp(20px, 3vh, 40px) clamp(22px, 3.4vw, 64px) clamp(20px, 2.6vh, 36px);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: clamp(12px, 2vh, 26px);
+  isolation: isolate;
+}
+
+/* 背景：干净的插画，不再有第二套 UI */
+.lobby::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: url("../bg/home.jpg") center 46% / cover no-repeat;
+}
+
+/* 轻度压暗，保证文字可读，但不形成色块 */
+.lobby::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(76% 60% at 50% 40%, rgba(6, 12, 30, 0) 30%, rgba(6, 12, 30, .22) 72%, rgba(6, 12, 30, .52) 100%),
+    linear-gradient(180deg, rgba(6, 12, 30, .42) 0%, rgba(6, 12, 30, .06) 22%, rgba(6, 12, 30, .10) 62%, rgba(6, 12, 30, .60) 100%);
+}
+
+/* ============================== 顶部 ============================== */
+.lobby-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  color: #f3f7ff;
+  text-shadow: 0 1px 6px rgba(4, 10, 26, .9);
+}
+
+.brand-mark { color: #f0d79a; display: grid; place-items: center; }
+.brand-mark svg { width: 14px; height: 14px; filter: drop-shadow(0 0 6px rgba(240, 215, 154, .8)); }
+
+.brand-sep {
+  width: 1px;
+  height: 12px;
+  background: rgba(240, 215, 154, .5);
+}
+
+.top-right { display: flex; align-items: center; gap: 14px; }
+
+.date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  color: #eaf1ff;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 1px 6px rgba(4, 10, 26, .9);
+}
+
+.date .weekday {
+  padding: 2px 8px;
+  border-radius: 3px;
+  background: #f6ecd2;
+  color: #1a2540;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-shadow: none;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border: 1px solid rgba(240, 215, 154, .42);
+  border-radius: 999px;
+  background: rgba(9, 17, 38, .55);
+  backdrop-filter: blur(10px);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+}
+
+.lang-switch button { color: rgba(233, 240, 255, .62); transition: color .2s; padding: 1px 2px; }
+.lang-switch button[aria-pressed="true"] { color: #ffe9b8; }
+.lang-switch button:hover { color: #fff; }
+.lang-switch .sep { color: rgba(240, 215, 154, .45); }
+
+/* ============================== 中部 ============================== */
+.lobby-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 30%);
+  align-items: center;
+  gap: clamp(24px, 5vw, 72px);
+}
+
+/* —— 标题 —— */
+.lobby-title { max-width: min(520px, 46%); }
+
+.title-kicker {
+  font-size: clamp(12px, 1.05vw, 14px);
+  font-weight: 600;
+  letter-spacing: .34em;
+  color: #f0d79a;
+  text-shadow: 0 1px 8px rgba(4, 10, 26, .95);
+}
+
+.display-title { margin: 14px 0 0; }
+
+.title-main {
+  display: block;
+  font-family: "Noto Serif SC", "Hiragino Mincho ProN", serif;
+  font-size: clamp(46px, 6.4vw, 92px);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: .04em;
+  color: #fff;
+  white-space: nowrap;
+  text-shadow:
+    0 2px 10px rgba(4, 10, 26, .95),
+    0 0 36px rgba(120, 160, 235, .55);
+}
+
+.title-rule {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0 14px;
+  max-width: 300px;
+}
+
+.title-rule span {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(240, 215, 154, 0), rgba(240, 215, 154, .85), rgba(240, 215, 154, 0));
+}
+
+.title-rule i {
+  width: 6px;
+  height: 6px;
+  transform: rotate(45deg);
+  background: #f0d79a;
+  box-shadow: 0 0 12px rgba(240, 215, 154, .9);
+}
+
+.title-sub {
+  font-size: clamp(15px, 1.3vw, 18px);
+  font-weight: 500;
+  letter-spacing: .08em;
+  color: rgba(238, 244, 255, .92);
+  text-shadow: 0 1px 8px rgba(4, 10, 26, .95);
+}
+
+/* —— 右侧菜单：深色玻璃 + 金框，高对比 —— */
+.lobby-menu { display: flex; flex-direction: column; gap: 12px; }
+
+.menu-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 16px 18px;
+  text-align: left;
+  border: 1px solid rgba(240, 215, 154, .40);
+  border-radius: 10px;
+  background: linear-gradient(160deg, rgba(16, 28, 58, .80) 0%, rgba(9, 17, 38, .86) 100%);
+  backdrop-filter: blur(12px) saturate(1.05);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, .06) inset,
+    0 14px 34px -18px rgba(0, 0, 0, .9);
+  transition: transform .24s cubic-bezier(.22,.61,.36,1),
+              border-color .24s,
+              box-shadow .24s,
+              background .24s;
+}
+
+.menu-btn:hover {
+  transform: translateX(4px);
+  border-color: rgba(255, 233, 184, .9);
+  background: linear-gradient(160deg, rgba(24, 40, 78, .90) 0%, rgba(12, 22, 46, .92) 100%);
+  box-shadow:
+    0 0 0 1px rgba(255, 233, 184, .18) inset,
+    0 18px 40px -18px rgba(0, 0, 0, .95),
+    0 0 30px -8px rgba(240, 215, 154, .55);
+}
+
+.menu-ico {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(240, 215, 154, .45);
+  border-radius: 9px;
+  background: rgba(240, 215, 154, .10);
+  color: #ffe9b8;
+}
+
+.menu-ico svg { width: 21px; height: 21px; }
+
+.menu-text { display: flex; flex-direction: column; gap: 3px; flex: 1 1 auto; min-width: 0; }
+
+.menu-en {
+  font-family: "Noto Serif SC", serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  line-height: 1.25;
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(4, 10, 26, .9);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu-zh {
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  line-height: 1.4;
+  color: rgba(226, 235, 255, .74);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu-state {
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: #f0d79a;
+  white-space: nowrap;
+}
+
+.menu-state.is-done { color: #8ff0c0; }
+
+.chev { flex: 0 0 auto; color: rgba(240, 215, 154, .75); }
+.chev svg { width: 16px; height: 16px; }
+
+/* ============================== 底部 ============================== */
+.lobby-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 4px;
+}
+
+.cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 17px 58px;
+  border: 1px solid rgba(255, 236, 190, .95);
+  border-radius: 8px;
+  background: linear-gradient(175deg, #fdf3d6 0%, #f0ddb0 46%, #dfc48c 100%);
+  color: #16233f;
+  box-shadow:
+    0 0 0 1px rgba(140, 105, 50, .35) inset,
+    0 0 0 3px rgba(9, 17, 38, .45),
+    0 18px 44px -20px rgba(0, 0, 0, .9),
+    0 0 40px -14px rgba(240, 215, 154, .85);
+  transition: transform .26s cubic-bezier(.22,.61,.36,1), box-shadow .26s, filter .26s;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow:
+    0 0 0 1px rgba(140, 105, 50, .45) inset,
+    0 0 0 3px rgba(9, 17, 38, .45),
+    0 22px 52px -20px rgba(0, 0, 0, .95),
+    0 0 56px -10px rgba(240, 215, 154, 1);
+}
+
+.cta-label {
+  font-family: "Noto Serif SC", serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: .26em;
+  text-indent: .26em;
+}
+
+.cta-gem {
+  width: 7px;
+  height: 7px;
+  transform: rotate(45deg);
+  background: #b8934e;
+  box-shadow: 0 0 8px rgba(184, 147, 78, .8);
+}
+
+.cta-hint {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  color: rgba(235, 242, 255, .88);
+  text-shadow: 0 1px 8px rgba(4, 10, 26, .95);
+}
+
+/* ============================== 内页背景 ============================== */
+body[data-view="play"] .bg-art    { background-image: url("../bg/play.jpg"); }
+body[data-view="library"] .bg-art { background-image: url("../bg/library.jpg"); }
+body[data-view="archive"] .bg-art { background-image: url("../bg/archive.jpg"); }
+body[data-view="rank"] .bg-art    { background-image: url("../bg/home.jpg"); }
+
+body:not([data-view="home"]) .bg-art {
+  background-position: center 44%;
+  opacity: 1;
+  animation: none;
+  transform: scale(1.03);
+}
+
+body:not([data-view="home"]) .bg-veil {
+  background:
+    linear-gradient(180deg, rgba(232, 242, 255, .42) 0%, rgba(240, 247, 255, .30) 40%, rgba(236, 245, 255, .58) 100%);
+}
+
+/* ============================== 响应式 ============================== */
+@media (max-width: 1100px) {
+  .lobby-main {
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 28px;
+  }
+  .lobby-title { max-width: none; }
+  .lobby-menu { max-width: 560px; width: 100%; }
+}
+
+@media (max-width: 760px) {
+  .lobby {
+    min-height: auto;
+    padding: 16px 16px 26px;
+    gap: 18px;
+  }
+
+  .lobby::before { background-image: url("../bg/home-mobile.jpg"); background-position: center 30%; }
+
+  .lobby-top { flex-wrap: wrap; gap: 10px; }
+  .brand { font-size: 11.5px; letter-spacing: .12em; }
+  .date { font-size: 12px; }
+  .date .weekday { font-size: 10px; }
+  .lang-switch { padding: 5px 11px; font-size: 11.5px; }
+
+  .lobby-main { gap: 22px; }
+
+  .lobby-title { text-align: center; }
+  .title-kicker { font-size: 12px; letter-spacing: .26em; }
+  .title-main { font-size: clamp(38px, 11vw, 52px); }
+  .title-rule { margin: 16px auto 12px; max-width: 220px; }
+  .title-sub { font-size: 14px; }
+
+  .lobby-menu { gap: 10px; }
+
+  .menu-btn { padding: 13px 14px; gap: 12px; border-radius: 9px; }
+  .menu-ico { width: 36px; height: 36px; border-radius: 8px; }
+  .menu-ico svg { width: 18px; height: 18px; }
+  .menu-en { font-size: 17px; }
+  .menu-zh { font-size: 12px; }
+  .menu-state { font-size: 11px; }
+  .chev svg { width: 14px; height: 14px; }
+
+  .cta { padding: 14px 40px; gap: 12px; }
+  .cta-label { font-size: 14px; letter-spacing: .2em; }
+  .cta-hint { font-size: 12px; }
+}
+
+/* 大厅铺满，不受 .view 的 1380px 限制 */
+body[data-view="home"] .view { max-width: none; width: 100%; margin: 0; }
+
+/* ==========================================================================
+   手机端：背景固定铺满视口，避免只盖住顶部一条
+   ========================================================================== */
+@media (max-width: 760px) {
+  body[data-view="home"] .stage { padding: 0; }
+
+  .lobby {
+    min-height: 100dvh;
+    padding: 16px 16px calc(96px + env(safe-area-inset-bottom));
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .lobby::before {
+    position: fixed;
+    inset: 0;
+    background: url("../bg/home-mobile.jpg") center top / cover no-repeat;
+  }
+
+  .lobby::after {
+    position: fixed;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(6, 12, 30, .55) 0%, rgba(6, 12, 30, .18) 26%, rgba(6, 12, 30, .34) 58%, rgba(6, 12, 30, .72) 100%);
+  }
+
+  .lobby-main { gap: 20px; align-content: start; }
+}
+
+/* ==========================================================================
+   背景素材包接入（the_word_archive_background_pack）
+   直接引用原始 WebP：不截图、不缩放、不裁剪、不模糊、不重绘
+   UI 全部为真实 HTML，位于背景层之上
+   ========================================================================== */
+
+body[data-view="home"] {
+  --scene-image: url("../bg/home-celestial.webp");
+  --scene-pos: 50% 42%;
+  --scene-pos-m: 50% 34%;
+}
+body[data-view="play"] {
+  --scene-image: url("../bg/home-celestial.webp");
+  --scene-pos: 50% 42%;
+  --scene-pos-m: 50% 34%;
+}
+body[data-view="library"] {
+  --scene-image: url("../bg/word-library.webp");
+  --scene-pos: 50% 46%;
+  --scene-pos-m: 50% 42%;
+}
+body[data-view="archive"] {
+  --scene-image: url("../bg/past-archive.webp");
+  --scene-pos: 50% 50%;
+  --scene-pos-m: 50% 46%;
+}
+body[data-view="rank"] {
+  --scene-image: url("../bg/rankings-hall.webp");
+  --scene-pos: 50% 42%;
+  --scene-pos-m: 50% 38%;
+}
+
+/* 首页/挑战：背景层 */
+.lobby::before {
+  background-image: var(--scene-image) !important;
+  background-position: var(--scene-pos) !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  filter: none !important;
+}
+
+/* 内页：全局背景层 */
+body:not([data-view="home"]) .bg-art {
+  background-image: var(--scene-image) !important;
+  background-position: var(--scene-pos) !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  transform: none !important;
+  scale: 1 !important;
+  opacity: 1 !important;
+  animation: none !important;
+  filter: none !important;
+}
+
+/* 手机端：改用另一组焦点，避免主体被裁掉 */
+@media (max-width: 900px) {
+  .lobby::before {
+    background-image: var(--scene-image) !important;
+    background-position: var(--scene-pos-m) !important;
+    background-size: cover !important;
+  }
+  body:not([data-view="home"]) .bg-art {
+    background-position: var(--scene-pos-m) !important;
+  }
+}
+
+/* CTA 字体修正：去掉装饰性衬线和过度字距，中文英文都保持干净 */
+.cta-label {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: .12em !important;
+  text-indent: 0 !important;
+  line-height: 1.35 !important;
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .cta-label {
+    font-size: 14px !important;
+    letter-spacing: .08em !important;
+  }
+}
+
+/* ==========================================================================
+   Typography normalization
+   目标：一套字号 / 字重 / 字距规则，去掉造成"脏"的多余阴影与过宽字距
+   ========================================================================== */
+
+/* —— 0. CTA 内的装饰菱形压住文字，直接移除 —— */
+.cta-gem { display: none !important; }
+
+/* —— 1. 全局字体角色 —— */
+:root {
+  --font-display: "Noto Serif SC", "Hiragino Mincho ProN", Georgia, serif;
+  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+             "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+/* —— 2. 品牌与状态栏 —— */
+.brand {
+  font-family: var(--font-ui) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: .12em !important;
+  color: #eef4ff !important;
+  text-shadow: 0 1px 3px rgba(4, 10, 26, .85) !important;
+}
+
+.brand-sep { height: 11px !important; background: rgba(240, 215, 154, .42) !important; }
+
+.date {
+  font-family: var(--font-ui) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: .06em !important;
+  color: #eef4ff !important;
+  text-shadow: 0 1px 3px rgba(4, 10, 26, .85) !important;
+}
+
+.date .weekday {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: .04em !important;
+  padding: 2px 7px !important;
+}
+
+.lang-switch {
+  font-family: var(--font-ui) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: .06em !important;
+}
+
+/* —— 3. 标题区 —— */
+.title-kicker {
+  font-family: var(--font-ui) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: .22em !important;
+  color: #f0d79a !important;
+  text-shadow: 0 1px 5px rgba(4, 10, 26, .9) !important;
+}
+
+.title-main {
+  font-family: var(--font-display) !important;
+  font-size: clamp(44px, 5.6vw, 76px) !important;
+  font-weight: 700 !important;
+  letter-spacing: .02em !important;
+  line-height: 1.08 !important;
+  color: #fff !important;
+  text-shadow: 0 2px 14px rgba(3, 8, 22, .85) !important;
+}
+
+.title-sub {
+  font-family: var(--font-ui) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  letter-spacing: .04em !important;
+  color: rgba(236, 243, 255, .94) !important;
+  text-shadow: 0 1px 5px rgba(4, 10, 26, .9) !important;
+}
+
+/* —— 4. 菜单 —— */
+.menu-en {
+  font-family: var(--font-display) !important;
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  letter-spacing: .02em !important;
+  line-height: 1.3 !important;
+  color: #fff !important;
+  text-shadow: none !important;
+}
+
+.menu-zh {
+  font-family: var(--font-ui) !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  letter-spacing: .02em !important;
+  line-height: 1.4 !important;
+  color: rgba(220, 231, 250, .76) !important;
+}
+
+.menu-state {
+  font-family: var(--font-ui) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: .02em !important;
+  color: #f0d79a !important;
+}
+
+/* —— 5. CTA —— */
+.cta-label {
+  font-family: var(--font-ui) !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  letter-spacing: .10em !important;
+  text-indent: 0 !important;
+  line-height: 1.35 !important;
+  color: #16233f !important;
+  text-shadow: none !important;
+  white-space: nowrap;
+}
+
+.cta-hint {
+  font-family: var(--font-ui) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: .05em !important;
+  color: rgba(238, 244, 255, .92) !important;
+  text-shadow: 0 1px 5px rgba(4, 10, 26, .9) !important;
+}
+
+/* —— 6. 内页排版 —— */
+body:not([data-view="home"]) .panel-title {
+  font-family: var(--font-display) !important;
+  font-size: clamp(26px, 2.6vw, 34px) !important;
+  font-weight: 700 !important;
+  letter-spacing: .01em !important;
+  line-height: 1.25 !important;
+  color: #fff !important;
+  text-shadow: none !important;
+}
+
+body:not([data-view="home"]) .panel-lead {
+  font-family: var(--font-ui) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.75 !important;
+  color: rgba(214, 226, 246, .84) !important;
+}
+
+body:not([data-view="home"]) .ghost-btn,
+body:not([data-view="home"]) .quiz-meta,
+body:not([data-view="home"]) .fineprint,
+body:not([data-view="home"]) .kbd-hint {
+  font-family: var(--font-ui) !important;
+  letter-spacing: .02em !important;
+}
+
+body:not([data-view="home"]) .q-def {
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  letter-spacing: .01em !important;
+  line-height: 1.55 !important;
+  text-shadow: none !important;
+}
+
+body:not([data-view="home"]) .option,
+body:not([data-view="home"]) .rule-list li,
+body:not([data-view="home"]) .word-card .wc-def,
+body:not([data-view="home"]) .arch-words li {
+  font-family: var(--font-ui) !important;
+  letter-spacing: 0 !important;
+}
+
+body:not([data-view="home"]) .word-card .wc-term,
+body:not([data-view="home"]) .board-name,
+body:not([data-view="home"]) .modal-title {
+  font-family: var(--font-display) !important;
+  letter-spacing: .01em !important;
+}
+
+body:not([data-view="home"]) .chip,
+body:not([data-view="home"]) .tab,
+body:not([data-view="home"]) .btn-primary,
+body:not([data-view="home"]) .btn-ghost,
+body:not([data-view="home"]) .name-row,
+body:not([data-view="home"]) .search input {
+  font-family: var(--font-ui) !important;
+  letter-spacing: .02em !important;
+}
+
+/* —— 7. 手机端字号 —— */
+@media (max-width: 760px) {
+  .title-kicker { font-size: 12px !important; letter-spacing: .18em !important; }
+  .title-main   { font-size: clamp(34px, 10vw, 46px) !important; }
+  .title-sub    { font-size: 14px !important; }
+  .brand        { font-size: 12px !important; }
+  .date         { font-size: 12px !important; }
+  .menu-en      { font-size: 17px !important; }
+  .menu-zh      { font-size: 12px !important; }
+  .menu-state   { font-size: 11px !important; }
+  .cta-label    { font-size: 14px !important; letter-spacing: .08em !important; }
+  .cta-hint     { font-size: 12px !important; }
+}
+
+/* 手机底部导航：统一为深色玻璃，避免浅色条与深色 UI 割裂 */
+@media (max-width: 760px) {
+  .tabbar {
+    background: rgba(10, 19, 42, .94) !important;
+    border-top: 1px solid rgba(240, 215, 154, .28) !important;
+    box-shadow: 0 -12px 30px -20px rgba(0, 0, 0, .9) !important;
+  }
+  .tab-btn { color: rgba(198, 213, 238, .62) !important; }
+  .tab-btn.is-active { color: #ffe9b8 !important; }
+}

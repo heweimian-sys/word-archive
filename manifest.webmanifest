@@ -1,0 +1,13 @@
+{
+  "name": "The Word Archive · 词林秘典",
+  "short_name": "Word Archive",
+  "description": "每日热词挑战：每天 5 道题，中英双语。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070c18",
+  "theme_color": "#070c18",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

@@ -1,0 +1,1374 @@
+{
+  "version": 1,
+  "updated": "2026-11-04",
+  "categories": [
+    { "id": "ai", "zh": "AI", "en": "AI", "icon": "star" },
+    { "id": "internet", "zh": "互联网", "en": "Internet", "icon": "globe" },
+    { "id": "business", "zh": "商业", "en": "Business", "icon": "chart" },
+    { "id": "culture", "zh": "文化", "en": "Culture", "icon": "book" },
+    { "id": "life", "zh": "生活", "en": "Life", "icon": "leaf" },
+    { "id": "tech", "zh": "科技", "en": "Tech", "icon": "chip" }
+  ],
+  "words": [
+    {
+      "id": "embodied-ai",
+      "term": { "zh": "具身智能", "en": "Embodied AI" },
+      "pinyin": "ju shen zhi neng",
+      "category": "ai",
+      "difficulty": 2,
+      "def": {
+        "zh": "让算法拥有物理身体，靠传感器感知真实环境并自主决策行动的智能方向，典型落地是机器人和自动驾驶。",
+        "en": "A branch of AI that gives algorithms a physical body, letting them sense the real world, decide and act on their own, most commonly in robots and self-driving systems."
+      },
+      "usage": {
+        "zh": "公司把大模型装进机械臂，正式押注具身智能。",
+        "en": "The company put a large model inside a robotic arm and is now betting on embodied AI."
+      },
+      "tags": ["机器人", "实体交互", "感知决策"],
+      "firstSeen": "2026-09-08"
+    },
+    {
+      "id": "large-model",
+      "term": { "zh": "大模型", "en": "Large Language Model" },
+      "pinyin": "da mo xing",
+      "category": "ai",
+      "difficulty": 1,
+      "def": {
+        "zh": "用海量语料训练出的通用神经网络，能听懂指令、生成文本，并迁移到写作、问答、翻译等众多任务上。",
+        "en": "A general-purpose neural network trained on enormous amounts of text, able to follow instructions, write content and be adapted to many tasks such as Q&A and translation."
+      },
+      "usage": {
+        "zh": "团队用大模型重写了客服机器人，回答准确率明显提升。",
+        "en": "The team rebuilt its support bot on a large model and saw answer accuracy rise."
+      },
+      "tags": ["神经网络", "通用能力", "文本生成"],
+      "firstSeen": "2026-08-14"
+    },
+    {
+      "id": "multimodal",
+      "term": { "zh": "多模态", "en": "Multimodal" },
+      "pinyin": "duo mo tai",
+      "category": "ai",
+      "difficulty": 2,
+      "def": {
+        "zh": "同一个模型能同时理解并生成文字、图片、声音和视频，把不同形态的信息放在一起处理的能力。",
+        "en": "The ability of one model to understand and produce text, images, audio and video together, handling several kinds of information at once."
+      },
+      "usage": {
+        "zh": "新版多模态模型可以直接看着照片回答问题。",
+        "en": "The new multimodal model can answer questions while looking at a photo."
+      },
+      "tags": ["跨格式", "图文音视频", "感知"],
+      "firstSeen": "2026-10-12"
+    },
+    {
+      "id": "ai-hallucination",
+      "term": { "zh": "AI 幻觉", "en": "AI Hallucination" },
+      "pinyin": "ai huan jue",
+      "category": "ai",
+      "difficulty": 2,
+      "def": {
+        "zh": "模型自信地编造出并不存在的事实、引用或数据，输出看着合理却经不起核对，用户贸然采信就会出错。",
+        "en": "When a model confidently invents facts, citations or numbers that do not exist, producing answers that look plausible but fall apart on checking."
+      },
+      "usage": {
+        "zh": "论文里的参考文献是AI幻觉编的，查无此文。",
+        "en": "Two of the paper's references were AI hallucinations and cannot be found."
+      },
+      "tags": ["事实错误", "可信度", "核实"],
+      "firstSeen": "2026-09-21"
+    },
+    {
+      "id": "prompt",
+      "term": { "zh": "提示词", "en": "Prompt" },
+      "pinyin": "ti shi ci",
+      "category": "ai",
+      "difficulty": 1,
+      "def": {
+        "zh": "用户输入给模型的指令文字，把需求、格式和限制说清楚，模型才更容易给出想要的结果。",
+        "en": "The instruction text a user types into a model; the clearer the requirement, format and limits, the closer the output gets to what is wanted."
+      },
+      "usage": {
+        "zh": "同样的模型，换一版提示词输出质量差很多。",
+        "en": "With the same model, a better prompt makes a huge difference in output quality."
+      },
+      "tags": ["指令", "输入", "调教"],
+      "firstSeen": "2026-08-30"
+    },
+    {
+      "id": "ai-agent",
+      "term": { "zh": "智能体", "en": "AI Agent" },
+      "pinyin": "zhi neng ti",
+      "category": "ai",
+      "difficulty": 2,
+      "def": {
+        "zh": "能自己拆解目标、调用工具、连续执行多步任务并把结果交付的AI程序，而不只是被动回答问题。",
+        "en": "An AI program that breaks a goal into steps, calls tools, carries out tasks over several turns and delivers a result instead of only answering questions."
+      },
+      "usage": {
+        "zh": "我让它当智能体，自动订机票、排日程、发周报。",
+        "en": "I set it up as an agent that books flights, schedules meetings and sends my weekly report."
+      },
+      "tags": ["自主执行", "工具调用", "多步任务"],
+      "firstSeen": "2026-10-05"
+    },
+    {
+      "id": "rag",
+      "term": { "zh": "RAG 检索增强", "en": "RAG" },
+      "pinyin": "rag jian suo zeng qiang",
+      "category": "ai",
+      "difficulty": 3,
+      "def": {
+        "zh": "让模型先到外部资料库里检索相关段落、再依据检索到的证据作答的技术，可减少编造并支持私域知识问答。",
+        "en": "A technique that first retrieves relevant passages from an external knowledge base and then answers from that evidence, cutting invention and enabling private-data Q&A."
+      },
+      "usage": {
+        "zh": "把公司文档接进RAG，客服回答就有出处了。",
+        "en": "We plugged the internal docs into RAG, so the support answers now come with sources."
+      },
+      "tags": ["检索", "外部知识", "降低幻觉"],
+      "firstSeen": "2026-09-02"
+    },
+    {
+      "id": "compute-power",
+      "term": { "zh": "算力", "en": "Computing Power" },
+      "pinyin": "suan li",
+      "category": "ai",
+      "difficulty": 1,
+      "def": {
+        "zh": "训练和运行模型需要的计算资源总量，常用显卡数量和运算速度衡量，是AI公司最贵的成本项。",
+        "en": "The total computing resources needed to train and run models, usually measured in GPUs and operations per second, and the biggest cost for AI companies."
+      },
+      "usage": {
+        "zh": "模型没做成，不是算法不行，是算力不够。",
+        "en": "The model failed not because of the algorithm but because we lacked compute."
+      },
+      "tags": ["GPU", "成本", "训练资源"],
+      "firstSeen": "2026-08-19"
+    },
+    {
+      "id": "fine-tuning",
+      "term": { "zh": "微调", "en": "Fine-tuning" },
+      "pinyin": "wei tiao",
+      "category": "ai",
+      "difficulty": 3,
+      "def": {
+        "zh": "在现成模型的基础上，用少量某个行业的专属数据继续训练，让它说话和答题更贴近该领域的习惯。",
+        "en": "Continuing to train an existing model on a small set of domain-specific data so that its wording and answers fit that field's conventions."
+      },
+      "usage": {
+        "zh": "用三年的病例做微调，模型给出的诊断建议专业多了。",
+        "en": "After fine-tuning on three years of case notes, the model's suggestions sounded far more professional."
+      },
+      "tags": ["领域数据", "二次训练", "定制"],
+      "firstSeen": "2026-09-27"
+    },
+    {
+      "id": "open-source-model",
+      "term": { "zh": "开源模型", "en": "Open-source Model" },
+      "pinyin": "kai yuan mo xing",
+      "category": "ai",
+      "difficulty": 2,
+      "def": {
+        "zh": "把模型权重公开、任何人都能下载到自己的服务器部署或改造的模型，与只能付费调用的闭源接口相反。",
+        "en": "A model whose weights are published so anyone can download, self-host and modify it, the opposite of a closed service you can only pay to call."
+      },
+      "usage": {
+        "zh": "预算有限，我们先拿开源模型私有化部署。",
+        "en": "On a tight budget we started with an open-source model deployed on our own servers."
+      },
+      "tags": ["权重公开", "私有部署", "可改造"],
+      "firstSeen": "2026-10-22"
+    },
+    {
+      "id": "ai-coding",
+      "term": { "zh": "AI 编程", "en": "AI Coding" },
+      "pinyin": "ai bian cheng",
+      "category": "ai",
+      "difficulty": 1,
+      "def": {
+        "zh": "程序员在编辑器里借助模型的自动补全、代码生成与查错功能来写程序，主导权仍在自己手上。",
+        "en": "The everyday practice of programmers using a model's autocomplete, code generation and bug-spotting inside the editor, with decisions still theirs to make."
+      },
+      "usage": {
+        "zh": "这周的表单页面全是AI编程生成的。",
+        "en": "All the form pages this week were generated through AI coding."
+      },
+      "tags": ["代码生成", "提效", "编程助手"],
+      "firstSeen": "2026-08-08"
+    },
+    {
+      "id": "vibe-coding",
+      "term": { "zh": "Vibe Coding", "en": "Vibe Coding" },
+      "pinyin": "vibe coding",
+      "category": "ai",
+      "difficulty": 2,
+      "def": {
+        "zh": "不懂代码也能用日常语言描述需求，让模型整段生成和修改程序，自己只看效果不审查实现的开发方式。",
+        "en": "A way of building software where non-programmers describe what they want in everyday language, let the model write whole chunks of code and judge it purely by the result."
+      },
+      "usage": {
+        "zh": "他不懂后端，靠Vibe Coding三天上线了一个小工具。",
+        "en": "He knows no backend but shipped a small tool in three days through vibe coding."
+      },
+      "tags": ["自然语言", "边聊边写", "低门槛"],
+      "firstSeen": "2026-11-02"
+    },
+    {
+      "id": "alignment",
+      "term": { "zh": "对齐", "en": "Alignment" },
+      "pinyin": "dui qi",
+      "category": "ai",
+      "difficulty": 3,
+      "def": {
+        "zh": "研究如何让模型的目标和行为符合人类意图与安全底线，防止它为了完成任务而做出有害举动。",
+        "en": "The research field working to make a model's goals and behavior match human intent and safety limits, so it does not cause harm while chasing a task."
+      },
+      "usage": {
+        "zh": "能力再强，对齐没做好也不敢上线。",
+        "en": "However capable it is, we won't ship it until alignment is solid."
+      },
+      "tags": ["安全", "价值观", "研究"],
+      "firstSeen": "2026-10-17"
+    },
+    {
+      "id": "reasoning-model",
+      "term": { "zh": "推理模型", "en": "Reasoning Model" },
+      "pinyin": "tui li mo xing",
+      "category": "ai",
+      "difficulty": 3,
+      "def": {
+        "zh": "回答之前先生成一长串思考过程、再给出结论的模型，擅长数学和逻辑题，代价是速度更慢、更费算力。",
+        "en": "A model that writes a long internal chain of thought before answering, strong at math and logic puzzles but slower and more expensive to run."
+      },
+      "usage": {
+        "zh": "这道奥数题交给推理模型，步骤写得比我还清楚。",
+        "en": "I gave the olympiad problem to a reasoning model and its steps were clearer than mine."
+      },
+      "tags": ["思维链", "数学逻辑", "慢思考"],
+      "firstSeen": "2026-09-14"
+    },
+    {
+      "id": "planting-grass",
+      "term": { "zh": "种草", "en": "Planting Grass" },
+      "pinyin": "zhong cao",
+      "category": "internet",
+      "difficulty": 1,
+      "def": {
+        "zh": "用亲身使用体验或精心包装的分享，让看到的人产生购买和尝试的欲望，常见于测评和好物推荐。",
+        "en": "A content-marketing effect where honest or carefully staged sharing of a product makes viewers want to buy or try it themselves, driving most review-style posts."
+      },
+      "usage": {
+        "zh": "她发了一条防晒测评，直接把我种草了。",
+        "en": "Her sunscreen review planted the grass so hard that I bought it the same day."
+      },
+      "tags": ["推荐", "消费欲", "测评"],
+      "firstSeen": "2026-08-11"
+    },
+    {
+      "id": "private-domain",
+      "term": { "zh": "私域", "en": "Private Domain Traffic" },
+      "pinyin": "si yu",
+      "category": "internet",
+      "difficulty": 2,
+      "def": {
+        "zh": "品牌把顾客加进微信群、公众号等自己能反复触达、不必每次再花钱买流量的经营阵地，用来长期卖货。",
+        "en": "Channels such as WeChat groups or official accounts that a brand owns and can reach again and again without paying for ads each time."
+      },
+      "usage": {
+        "zh": "把老客户导进微信群做私域，复购率翻了一倍。",
+        "en": "We moved old customers into WeChat groups as private traffic and repeat sales doubled."
+      },
+      "tags": ["微信群", "用户沉淀", "低成本触达"],
+      "firstSeen": "2026-09-05"
+    },
+    {
+      "id": "traffic-pool",
+      "term": { "zh": "流量池", "en": "Traffic Pool" },
+      "pinyin": "liu liang chi",
+      "category": "internet",
+      "difficulty": 3,
+      "def": {
+        "zh": "平台或商家手里可以反复调配的用户访问总量，用来衡量一次投放究竟能触达多少人、够不够用。",
+        "en": "The total pool of user visits a platform or merchant can draw on repeatedly, a way to size how many people one campaign can actually reach."
+      },
+      "usage": {
+        "zh": "这波投放只用了流量池里很小一块，效果已经不错。",
+        "en": "The campaign tapped only a small slice of the traffic pool and still did well."
+      },
+      "tags": ["触达规模", "投放", "用户访问"],
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "id": "break-the-circle",
+      "term": { "zh": "破圈", "en": "Break Out of the Niche" },
+      "pinyin": "po quan",
+      "category": "internet",
+      "difficulty": 2,
+      "def": {
+        "zh": "原本只在某个小众圈子里流行的内容或人物，被圈子之外的大众也讨论和接受，受众面明显扩大。",
+        "en": "When something popular inside a small niche spreads to a much wider audience outside that circle and gets accepted there."
+      },
+      "usage": {
+        "zh": "这部小成本短剧意外破圈，连我妈都在追。",
+        "en": "The low-budget drama broke out of its niche and even my mother is watching it."
+      },
+      "tags": ["小众到大众", "传播", "出圈"],
+      "firstSeen": "2026-08-25"
+    },
+    {
+      "id": "self-media",
+      "term": { "zh": "自媒体", "en": "Self-media" },
+      "pinyin": "zi mei ti",
+      "category": "internet",
+      "difficulty": 1,
+      "def": {
+        "zh": "个人或小团队自己开账号、自主选题发布并靠内容变现的传播方式，不依附传统媒体机构。",
+        "en": "Publishing where individuals or tiny teams run their own accounts, pick their own topics and earn from content without working for a traditional outlet."
+      },
+      "usage": {
+        "zh": "他辞职做自媒体，现在靠接广告养活自己。",
+        "en": "He quit his job for self-media and now lives off sponsored posts."
+      },
+      "tags": ["个人账号", "内容变现", "自主发布"],
+      "firstSeen": "2026-08-17"
+    },
+    {
+      "id": "livestream-clip",
+      "term": { "zh": "直播切片", "en": "Livestream Clip" },
+      "pinyin": "zhi bo qie pian",
+      "category": "internet",
+      "difficulty": 2,
+      "def": {
+        "zh": "从几个小时的直播录像里剪出的高光短片段，再分发到短视频平台，为原来的直播间源源不断引流。",
+        "en": "Highlight clips cut from hours of livestream footage and reposted to short-video platforms to pull viewers back into the live room."
+      },
+      "usage": {
+        "zh": "主播团队每天产出几十条直播切片，铺满推荐页。",
+        "en": "The host's team turns out dozens of livestream clips a day to fill the feed."
+      },
+      "tags": ["二次剪辑", "短视频", "引流"],
+      "firstSeen": "2026-09-30"
+    },
+    {
+      "id": "zheng-huo",
+      "term": { "zh": "整活", "en": "Pull a Stunt" },
+      "pinyin": "zheng huo",
+      "category": "internet",
+      "difficulty": 2,
+      "def": {
+        "zh": "在直播或短视频里用夸张、出其不意的现场表演制造节目效果和话题，图的就是热闹和围观。",
+        "en": "Putting on exaggerated, unexpected live performances during streams or short videos to create entertainment value and buzz, aiming for spectacle rather than substance."
+      },
+      "usage": {
+        "zh": "为了涨粉，他直播整活把自己关进冰箱。",
+        "en": "Chasing followers, he pulled a stunt and livestreamed himself inside a fridge."
+      },
+      "tags": ["节目效果", "直播", "夸张"],
+      "firstSeen": "2026-10-09"
+    },
+    {
+      "id": "abstract",
+      "term": { "zh": "抽象", "en": "Absurd" },
+      "pinyin": "chou xiang",
+      "category": "internet",
+      "difficulty": 2,
+      "def": {
+        "zh": "形容人或内容离奇到超出常理、让人哭笑不得，只能当成荒诞笑话来看待，是网络常用的调侃说法。",
+        "en": "Internet slang describing people or content so bizarre and beyond common sense that the only possible reaction is to laugh at the absurdity."
+      },
+      "usage": {
+        "zh": "他那个操作太抽象了，评论区全在问号。",
+        "en": "That move was so absurd that the comment section was nothing but question marks."
+      },
+      "tags": ["荒诞", "离谱", "网络调侃"],
+      "firstSeen": "2026-11-01"
+    },
+    {
+      "id": "meme-play",
+      "term": { "zh": "玩梗", "en": "Meme Reference" },
+      "pinyin": "wan geng",
+      "category": "internet",
+      "difficulty": 1,
+      "def": {
+        "zh": "故意借用某个流行梗、台词或名场面来说话调侃，懂的人一听就会心一笑，不懂的人则一脸茫然。",
+        "en": "Deliberately borrowing a popular meme, line or famous scene when speaking, so that people in the know immediately get the joke."
+      },
+      "usage": {
+        "zh": "老板开会还在玩梗，气氛一下轻松了。",
+        "en": "The boss dropped a meme reference in the meeting and the mood lightened instantly."
+      },
+      "tags": ["借用梗", "调侃", "共鸣"],
+      "firstSeen": "2026-08-22"
+    },
+    {
+      "id": "bei-po-fang",
+      "term": { "zh": "破防", "en": "Emotionally Overwhelmed" },
+      "pinyin": "po fang",
+      "category": "internet",
+      "difficulty": 2,
+      "def": {
+        "zh": "被一句话或一件事击中软肋，情绪防线当场崩溃、忍不住难过或激动，多带戏谑和自嘲的语气。",
+        "en": "Having one's emotional defenses broken by a single sentence or event, often used half-jokingly when someone suddenly feels hurt or moved."
+      },
+      "usage": {
+        "zh": "看到妈妈发来的长语音，我直接破防了。",
+        "en": "When I saw the long voice message from my mother, my defenses just broke."
+      },
+      "tags": ["情绪失控", "戳心", "戏谑"],
+      "firstSeen": "2026-09-18"
+    },
+    {
+      "id": "screen-flood",
+      "term": { "zh": "刷屏", "en": "Flood the Feed" },
+      "pinyin": "shua ping",
+      "category": "internet",
+      "difficulty": 1,
+      "def": {
+        "zh": "同一条内容在很短时间里被大量转发，把社交平台的信息流整页占满，让人想躲都躲不开。",
+        "en": "The same piece of content being forwarded so heavily in a short window that it fills page after page of a social platform's feed."
+      },
+      "usage": {
+        "zh": "新歌上线当天，朋友圈被刷屏了。",
+        "en": "On release day the new song flooded everyone's feed."
+      },
+      "tags": ["信息流", "集中转发", "热点"],
+      "firstSeen": "2026-08-06"
+    },
+    {
+      "id": "internet-sense",
+      "term": { "zh": "网感", "en": "Internet Savvy" },
+      "pinyin": "wang gan",
+      "category": "internet",
+      "difficulty": 2,
+      "def": {
+        "zh": "对网络流行语、热点节奏和用户口味变化保持敏锐，能迅速判断什么内容会受欢迎、什么会翻车。",
+        "en": "A sharp feel for internet slang, the rhythm of trending topics and shifting user taste, letting someone judge quickly what content will land."
+      },
+      "usage": {
+        "zh": "这家公司招运营，第一条要求就是网感好。",
+        "en": "The first requirement in that company's social-media job post is good internet sense."
+      },
+      "tags": ["内容判断", "敏锐", "运营"],
+      "firstSeen": "2026-10-02"
+    },
+    {
+      "id": "follower-growth",
+      "term": { "zh": "涨粉", "en": "Gain Followers" },
+      "pinyin": "zhang fen",
+      "category": "internet",
+      "difficulty": 1,
+      "def": {
+        "zh": "账号的关注人数持续增加，是内容创作者判断选题和账号有没有起色的第一指标，也是接广告的底气。",
+        "en": "A steady rise in an account's follower count, the first metric creators watch to see whether their topics and channel are gaining traction."
+      },
+      "usage": {
+        "zh": "那条视频一周涨粉十万，团队兴奋坏了。",
+        "en": "That one video gained a hundred thousand followers in a week and the team went wild."
+      },
+      "tags": ["粉丝增长", "账号成长", "指标"],
+      "firstSeen": "2026-08-28"
+    },
+    {
+      "id": "career-collapse",
+      "term": { "zh": "塌房", "en": "Reputation Collapse" },
+      "pinyin": "ta fang",
+      "category": "internet",
+      "difficulty": 2,
+      "def": {
+        "zh": "公众人物因为丑闻或人设被戳穿而形象尽毁，粉丝大批脱粉，相关作品和代言也跟着受牵连。",
+        "en": "Internet slang for a public figure's image collapsing after a scandal or exposed fake persona, usually with fans leaving in droves."
+      },
+      "usage": {
+        "zh": "偶像塌房后，后援会一夜解散。",
+        "en": "After the star's reputation collapsed, the fan club disbanded overnight."
+      },
+      "tags": ["人设崩塌", "脱粉", "丑闻"],
+      "firstSeen": "2026-10-24"
+    },
+    {
+      "id": "one-person-company",
+      "term": { "zh": "一人公司", "en": "One-person Company" },
+      "pinyin": "yi ren gong si",
+      "category": "business",
+      "difficulty": 2,
+      "def": {
+        "zh": "一个人借助AI工具和外包服务完成产品、运营与交付，不雇员工也能运转的轻资产创业形态。",
+        "en": "A lean way to run a business where one person uses AI tools and outside services to build, market and deliver without hiring staff."
+      },
+      "usage": {
+        "zh": "他一个人做产品、写文案、跑客服，把一人公司做到了百万营收。",
+        "en": "He builds, writes copy and handles support alone, running his one-person company to seven figures."
+      },
+      "tags": ["轻资产", "AI工具", "单人创业"],
+      "firstSeen": "2026-09-11"
+    },
+    {
+      "id": "brand-collab",
+      "term": { "zh": "品牌联名", "en": "Brand Collaboration" },
+      "pinyin": "pin pai lian ming",
+      "category": "business",
+      "difficulty": 1,
+      "def": {
+        "zh": "两个不同品牌联合推出限定款产品或活动，互相借用对方的顾客群扩大声量，也给老用户制造新鲜感。",
+        "en": "Two different brands releasing a limited product or event together, each borrowing the other customer base to amplify reach and create fresh excitement for their own fans."
+      },
+      "usage": {
+        "zh": "茶饮和动画IP做品牌联名，杯子被抢断货。",
+        "en": "The tea chain did a brand collaboration with an anime IP and the cups sold out."
+      },
+      "tags": ["限定款", "跨界", "互相借势"],
+      "firstSeen": "2026-08-13"
+    },
+    {
+      "id": "go-global",
+      "term": { "zh": "出海", "en": "Go Global" },
+      "pinyin": "chu hai",
+      "category": "business",
+      "difficulty": 1,
+      "def": {
+        "zh": "国内企业把产品、内容或服务卖到海外市场，寻找新的增长空间和更宽的利润，常从东南亚和中东起步。",
+        "en": "Chinese companies taking products, content or services to overseas markets in search of new growth room and healthier margins, often starting in Southeast Asia or the Middle East."
+      },
+      "usage": {
+        "zh": "这家游戏公司靠出海，收入比国内还高。",
+        "en": "Thanks to going global, this game studio earns more abroad than at home."
+      },
+      "tags": ["海外市场", "增长", "跨境"],
+      "firstSeen": "2026-08-20"
+    },
+    {
+      "id": "local-life",
+      "term": { "zh": "本地生活", "en": "Local Life Services" },
+      "pinyin": "ben di sheng huo",
+      "category": "business",
+      "difficulty": 2,
+      "def": {
+        "zh": "围绕餐饮、住宿、到店娱乐等线下消费提供团购、预订和即时配送的数字化业务，靠补贴争夺用户。",
+        "en": "Digital services around offline spending such as dining, hotels and in-store entertainment, offering group deals, booking and instant delivery while competing hard on subsidies."
+      },
+      "usage": {
+        "zh": "平台在本地生活上补贴很大，吃饭比堂食便宜。",
+        "en": "The platform subsidizes local life services heavily, so delivery deals beat dining in."
+      },
+      "tags": ["到店消费", "团购预订", "即时配送"],
+      "firstSeen": "2026-09-24"
+    },
+    {
+      "id": "conversion-rate",
+      "term": { "zh": "转化率", "en": "Conversion Rate" },
+      "pinyin": "zhuan hua lv",
+      "category": "business",
+      "difficulty": 2,
+      "def": {
+        "zh": "完成下单、注册等目标动作的人占触达总人数的比例，用来判断投放和页面到底有没有效果。",
+        "en": "The share of reached users who complete a target action such as ordering or signing up, used to judge whether ads and pages actually work."
+      },
+      "usage": {
+        "zh": "把购买按钮改成红色，转化率涨了两个点。",
+        "en": "Making the buy button red lifted the conversion rate by two points."
+      },
+      "tags": ["投放效果", "下单", "指标"],
+      "firstSeen": "2026-10-14"
+    },
+    {
+      "id": "repurchase",
+      "term": { "zh": "复购", "en": "Repeat Purchase" },
+      "pinyin": "fu gou",
+      "category": "business",
+      "difficulty": 2,
+      "def": {
+        "zh": "同一位顾客在首次购买后再次回购同一品牌或商品，说明产品和体验获得了长期认可，而非一次性尝鲜。",
+        "en": "When a customer buys the same brand or product again after the first order, a sign that the product and experience earned lasting trust."
+      },
+      "usage": {
+        "zh": "咖啡月卡上线后，会员复购明显变勤。",
+        "en": "After the coffee subscription launched, members repurchased far more often."
+      },
+      "tags": ["回头客", "用户粘性", "长期认可"],
+      "firstSeen": "2026-10-07"
+    },
+    {
+      "id": "knowledge-payment",
+      "term": { "zh": "知识付费", "en": "Paid Knowledge" },
+      "pinyin": "zhi shi fu fei",
+      "category": "business",
+      "difficulty": 1,
+      "def": {
+        "zh": "把课程、专栏、咨询等知识内容打包成商品出售，用户花钱买别人已经整理好的经验，省下自己摸索的时间。",
+        "en": "Selling courses, columns or consulting as packaged products, with buyers paying for experience someone else has already organized so they skip the trial and error."
+      },
+      "usage": {
+        "zh": "他买了三门知识付费课程，只听完第一节。",
+        "en": "He bought three paid knowledge courses and only finished the first lesson."
+      },
+      "tags": ["课程", "内容商品", "买经验"],
+      "firstSeen": "2026-08-31"
+    },
+    {
+      "id": "ip-derivative",
+      "term": { "zh": "IP 衍生", "en": "IP Derivative" },
+      "pinyin": "ip yan sheng",
+      "category": "business",
+      "difficulty": 2,
+      "def": {
+        "zh": "围绕影视、动漫、游戏等原创IP开发的周边商品、授权联名与线下体验，把粉丝好感变成收入。",
+        "en": "Merchandise, licensing deals and offline experiences built around an original film, comic or game IP, turning fan affection into revenue."
+      },
+      "usage": {
+        "zh": "这部动画的IP衍生收入，已经超过票房本身。",
+        "en": "IP derivative revenue from the animation has already overtaken box-office income."
+      },
+      "tags": ["授权", "周边生意", "粉丝变现"],
+      "firstSeen": "2026-09-17"
+    },
+    {
+      "id": "supply-chain",
+      "term": { "zh": "供应链", "en": "Supply Chain" },
+      "pinyin": "gong ying lian",
+      "category": "business",
+      "difficulty": 1,
+      "def": {
+        "zh": "从原料采购、生产制造到仓储配送的一整条协作链路，决定成本高低、交货快慢和断货风险。",
+        "en": "The whole chain from raw-material sourcing through manufacturing to warehousing and delivery, which sets both cost and how fast orders ship."
+      },
+      "usage": {
+        "zh": "旺季爆单，供应链跟不上，货压在仓库里发不出。",
+        "en": "Orders spiked in peak season but the supply chain could not keep up and goods sat in the warehouse."
+      },
+      "tags": ["采购生产", "仓储配送", "成本"],
+      "firstSeen": "2026-08-26"
+    },
+    {
+      "id": "cost-reduction",
+      "term": { "zh": "降本增效", "en": "Cut Costs, Lift Efficiency" },
+      "pinyin": "jiang ben zeng xiao",
+      "category": "business",
+      "difficulty": 2,
+      "def": {
+        "zh": "企业通过裁员、流程精简或技术替代压低开支，同时让每个人和每台设备的产出更高，是裁员季的高频词。",
+        "en": "Companies cutting spending through layoffs, leaner processes or automation while pushing each person and machine to produce more per unit of cost."
+      },
+      "usage": {
+        "zh": "公司喊了一年降本增效，最后砍的是下午茶。",
+        "en": "The company chanted cost reduction for a year and ended up cutting the afternoon snacks."
+      },
+      "tags": ["开源节流", "效率", "裁员"],
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "white-label",
+      "term": { "zh": "白牌", "en": "White-label Goods" },
+      "pinyin": "bai pai",
+      "category": "business",
+      "difficulty": 2,
+      "def": {
+        "zh": "没有品牌或品牌很弱、由工厂直接供货的低价商品，靠性价比取胜，包装和详情页往往和大牌高度相似。",
+        "en": "Cheap goods sold straight from factories with no real brand, competing on price and value rather than on brand premium."
+      },
+      "usage": {
+        "zh": "同厂同款，白牌比大牌便宜一半。",
+        "en": "Made in the same factory, the white-label version costs half the branded one."
+      },
+      "tags": ["无品牌", "工厂直供", "性价比"],
+      "firstSeen": "2026-10-19"
+    },
+    {
+      "id": "mcn",
+      "term": { "zh": "MCN 机构", "en": "MCN Agency" },
+      "pinyin": "mcn ji gou",
+      "category": "business",
+      "difficulty": 2,
+      "def": {
+        "zh": "签约并孵化为内容创作者、帮他们对接平台流量与商业广告、再从中抽取分成的中介型公司。",
+        "en": "An agency that signs and develops content creators, connects them with platform traffic and brand advertising deals, and takes a cut of the revenue."
+      },
+      "usage": {
+        "zh": "她签了MCN机构，账号更新频率一下提了上来。",
+        "en": "She signed with an MCN agency and her posting frequency jumped immediately."
+      },
+      "tags": ["创作者孵化", "广告对接", "分成"],
+      "firstSeen": "2026-09-09"
+    },
+    {
+      "id": "gmv",
+      "term": { "zh": "GMV", "en": "GMV" },
+      "pinyin": "gmv",
+      "category": "business",
+      "difficulty": 3,
+      "def": {
+        "zh": "一段时间内成交订单金额的总和，包含还没付款和已退货的部分，常被用来展示规模，比实际收入虚高。",
+        "en": "The total value of orders placed in a period, including unpaid and later returned ones, often quoted to show how big a business looks."
+      },
+      "usage": {
+        "zh": "直播间GMV破亿，实际退款率却高得吓人。",
+        "en": "The livestream hit a hundred million in GMV, but the refund rate was terrifying."
+      },
+      "tags": ["成交额", "规模数据", "含退货"],
+      "firstSeen": "2026-10-26"
+    },
+    {
+      "id": "micro-drama",
+      "term": { "zh": "微短剧", "en": "Micro Drama" },
+      "pinyin": "wei duan ju",
+      "category": "culture",
+      "difficulty": 1,
+      "def": {
+        "zh": "单集只有一两分钟、几十集讲完一个强冲突故事的竖屏剧，多在短视频平台连载并按集收费。",
+        "en": "A vertical-format series with one- or two-minute episodes whose dozens of parts tell one high-conflict story, usually serialized and charged per episode on short-video apps."
+      },
+      "usage": {
+        "zh": "我妈花了两百块解锁微短剧大结局。",
+        "en": "My mother paid two hundred yuan to unlock the ending of a micro drama."
+      },
+      "tags": ["竖屏", "短集数", "付费追剧"],
+      "firstSeen": "2026-09-15"
+    },
+    {
+      "id": "guzi",
+      "term": { "zh": "谷子", "en": "Guzi (Merch)" },
+      "pinyin": "gu zi",
+      "category": "culture",
+      "difficulty": 1,
+      "def": {
+        "zh": "动漫游戏作品推出的徽章、立牌、挂件等小件收藏商品，价格从几元到上千元都有，买家多为年轻粉丝。",
+        "en": "Small collectible merchandise such as badges, acrylic stands and keychains tied to anime or games, priced anywhere from a few yuan to over a thousand."
+      },
+      "usage": {
+        "zh": "她一个月的工资，一半花在买谷子上。",
+        "en": "She spends half her monthly salary on guzi."
+      },
+      "tags": ["周边", "收藏", "动漫商品"],
+      "firstSeen": "2026-10-11"
+    },
+    {
+      "id": "guzi-circle",
+      "term": { "zh": "谷圈", "en": "Guzi Circle" },
+      "pinyin": "gu quan",
+      "category": "culture",
+      "difficulty": 3,
+      "def": {
+        "zh": "围绕小件周边交换、拼团和炒价形成的爱好者圈子，有自己的行话、拼单规则和避雷名单。",
+        "en": "The fan community built around swapping, group-buying and reselling small merchandise, complete with its own slang, trading rules and a blacklist of unreliable sellers."
+      },
+      "usage": {
+        "zh": "进谷圈半年，她学会了看行情、拼团和避雷。",
+        "en": "Six months into the guzi circle she learned pricing, group buys and whom to avoid."
+      },
+      "tags": ["爱好者群体", "交易行话", "拼团"],
+      "firstSeen": "2026-10-15"
+    },
+    {
+      "id": "itabag",
+      "term": { "zh": "痛包", "en": "Ita-bag" },
+      "pinyin": "tong bao",
+      "category": "culture",
+      "difficulty": 2,
+      "def": {
+        "zh": "把大量同款周边整齐别在透明包面上、背着出门展示爱好的背包，是漫展上最显眼的应援装备。",
+        "en": "A backpack with a clear window covered in neatly arranged merchandise of one character, carried around to show off fandom."
+      },
+      "usage": {
+        "zh": "漫展门口全是背痛包的女生，包上别满徽章。",
+        "en": "Outside the convention, girls carried ita-bags covered in badges."
+      },
+      "tags": ["周边展示", "背包", "应援"],
+      "firstSeen": "2026-09-19"
+    },
+    {
+      "id": "acg",
+      "term": { "zh": "二次元", "en": "ACG Culture" },
+      "pinyin": "er ci yuan",
+      "category": "culture",
+      "difficulty": 1,
+      "def": {
+        "zh": "源于日本动画、漫画与游戏的虚构世界及其审美体系，角色和故事都发生在纸面与屏幕里。",
+        "en": "The fictional world and visual language born from Japanese animation, comics and games, where characters and stories live on page and screen."
+      },
+      "usage": {
+        "zh": "他自称二次元，房间里贴满了海报。",
+        "en": "He calls himself an ACG fan and his room is wallpapered with posters."
+      },
+      "tags": ["动画漫画", "虚构文化圈", "爱好者"],
+      "firstSeen": "2026-08-09"
+    },
+    {
+      "id": "china-chic",
+      "term": { "zh": "国潮", "en": "China Chic" },
+      "pinyin": "guo chao",
+      "category": "culture",
+      "difficulty": 1,
+      "def": {
+        "zh": "把传统纹样、色彩和故事与现代设计结合、受年轻人追捧的本土潮流风格，常见于服饰和美妆联名。",
+        "en": "A homegrown fashion wave that blends traditional patterns, colors and stories with modern design and wins over young consumers, especially in apparel and cosmetics."
+      },
+      "usage": {
+        "zh": "这件国潮卫衣把云纹印在袖口上。",
+        "en": "This China-chic hoodie prints cloud patterns along the cuffs."
+      },
+      "tags": ["传统元素", "国货", "年轻潮流"],
+      "firstSeen": "2026-08-16"
+    },
+    {
+      "id": "hanfu",
+      "term": { "zh": "汉服", "en": "Hanfu" },
+      "pinyin": "han fu",
+      "category": "culture",
+      "difficulty": 1,
+      "def": {
+        "zh": "以汉民族传统服饰形制为基础复刻改良的现代服装，常出现在节日出游和国风活动，面料和版型分很多流派。",
+        "en": "Modern clothing reproduced and adapted from traditional Han Chinese dress, worn at festivals, outings and Chinese-style cultural events, and sold in many regional styles."
+      },
+      "usage": {
+        "zh": "她穿着汉服去赏花，一路上被要求合影。",
+        "en": "She went flower viewing in hanfu and was asked for photos all along the way."
+      },
+      "tags": ["传统服饰", "国风", "日常穿着"],
+      "firstSeen": "2026-08-23"
+    },
+    {
+      "id": "ich",
+      "term": { "zh": "非遗", "en": "Intangible Cultural Heritage" },
+      "pinyin": "fei yi",
+      "category": "culture",
+      "difficulty": 2,
+      "def": {
+        "zh": "被列入保护名录的传统技艺、戏曲、民俗等活态文化遗产，近年常靠短视频重新走红，也吸引年轻人拜师。",
+        "en": "Living heritage such as traditional crafts, opera and folk customs listed for protection, often finding new fame through short videos."
+      },
+      "usage": {
+        "zh": "竹编非遗传承人开直播，订单排到了明年。",
+        "en": "The bamboo-weaving heritage inheritor went live and orders are booked into next year."
+      },
+      "tags": ["传统技艺", "传承", "文化遗产"],
+      "firstSeen": "2026-09-22"
+    },
+    {
+      "id": "immersive",
+      "term": { "zh": "沉浸式", "en": "Immersive" },
+      "pinyin": "chen jin shi",
+      "category": "culture",
+      "difficulty": 2,
+      "def": {
+        "zh": "用实景布景、光影和剧情把观众整个包进去，让人暂时忘掉现实的艺术体验形式，多用于戏剧和展览。",
+        "en": "An art format that wraps the audience inside physical sets, lighting and story so completely that reality slips away for a while."
+      },
+      "usage": {
+        "zh": "这场沉浸式戏剧没有固定座位，观众跟着演员跑。",
+        "en": "The immersive play had no fixed seats and the audience followed the actors around."
+      },
+      "tags": ["实景体验", "包裹感", "演出"],
+      "firstSeen": "2026-10-20"
+    },
+    {
+      "id": "script-murder",
+      "term": { "zh": "剧本杀", "en": "Script Murder Game" },
+      "pinyin": "ju ben sha",
+      "category": "culture",
+      "difficulty": 2,
+      "def": {
+        "zh": "玩家各自扮演一个角色，靠搜证、盘问和讨论共同还原一桩凶案的线下社交游戏，一局常要四五个小时。",
+        "en": "An offline social game where each player acts a role and, through clue hunting, questioning and discussion, the group reconstructs a murder."
+      },
+      "usage": {
+        "zh": "周末六个人开了一局剧本杀，玩了五个小时。",
+        "en": "Six of us ran a script murder game at the weekend and played for five hours."
+      },
+      "tags": ["角色扮演", "推理", "线下社交"],
+      "firstSeen": "2026-09-03"
+    },
+    {
+      "id": "comic-con",
+      "term": { "zh": "漫展", "en": "Comic Convention" },
+      "pinyin": "man zhan",
+      "category": "culture",
+      "difficulty": 2,
+      "def": {
+        "zh": "集中展示动漫作品、售卖周边并举办同好活动的线下展会，很多人会精心角色扮演到场，排队几小时只为买限定。",
+        "en": "An offline convention that showcases anime works, sells merchandise and hosts fan events, with many attendees arriving in elaborate cosplay."
+      },
+      "usage": {
+        "zh": "今年漫展摊位比去年多了一倍。",
+        "en": "This year's comic convention had twice as many booths as last year."
+      },
+      "tags": ["展会", "周边摊位", "角色扮演"],
+      "firstSeen": "2026-08-27"
+    },
+    {
+      "id": "doujin",
+      "term": { "zh": "同人", "en": "Fan Work" },
+      "pinyin": "tong ren",
+      "category": "culture",
+      "difficulty": 2,
+      "def": {
+        "zh": "爱好者以原作的人物或世界观为基础，自行创作的漫画、小说、音乐等非官方作品，在圈内以同人志形式流传。",
+        "en": "Unofficial comics, fiction, music or other works that fans create on top of an existing story's characters or world, without the rights holder's involvement."
+      },
+      "usage": {
+        "zh": "她写的同人小说比原作还火。",
+        "en": "The fan fiction she writes is more popular than the original novel."
+      },
+      "tags": ["二次创作", "非官方", "爱好者作品"],
+      "firstSeen": "2026-10-29"
+    },
+    {
+      "id": "e-snack",
+      "term": { "zh": "电子榨菜", "en": "Digital Side Dish" },
+      "pinyin": "dian zi zha cai",
+      "category": "culture",
+      "difficulty": 1,
+      "def": {
+        "zh": "吃饭时用来佐餐的短视频、剧集或播客，内容不太重要，关键是让一个人吃饭不无聊、不显得孤单。",
+        "en": "The short videos, series or podcasts people play while eating alone, chosen less for quality than for making a solo meal less dull."
+      },
+      "usage": {
+        "zh": "没有电子榨菜，这顿饭吃得特别漫长。",
+        "en": "Without my digital side dish, the meal felt endless."
+      },
+      "tags": ["下饭内容", "佐餐视频", "独处"],
+      "firstSeen": "2026-08-04"
+    },
+    {
+      "id": "emotional-value",
+      "term": { "zh": "情绪价值", "en": "Emotional Value" },
+      "pinyin": "qing xu jia zhi",
+      "category": "life",
+      "difficulty": 1,
+      "def": {
+        "zh": "让人感到被理解、被安慰和被陪伴的体验，如今也被拿来衡量一段关系或一次消费值不值得。",
+        "en": "The experience of feeling understood, comforted and accompanied, now also used to judge whether a relationship or service is worth it."
+      },
+      "usage": {
+        "zh": "这家店卖的不是咖啡，是情绪价值。",
+        "en": "This shop sells not coffee but emotional value."
+      },
+      "tags": ["陪伴", "被理解", "关系"],
+      "firstSeen": "2026-08-18"
+    },
+    {
+      "id": "reverse-travel",
+      "term": { "zh": "反向旅游", "en": "Reverse Travel" },
+      "pinyin": "fan xiang lv you",
+      "category": "life",
+      "difficulty": 2,
+      "def": {
+        "zh": "特意避开热门城市和旺季，去人少、物价低的小城慢慢待着的出行方式，主打不排队和性价比。",
+        "en": "A travel style that deliberately avoids famous cities and peak season, heading instead to quiet, cheap small towns to slow down."
+      },
+      "usage": {
+        "zh": "国庆他反向旅游，去了个没人听过的小县城。",
+        "en": "For the holiday he did reverse travel and went to a tiny county nobody has heard of."
+      },
+      "tags": ["小众目的地", "错峰", "慢节奏"],
+      "firstSeen": "2026-10-10"
+    },
+    {
+      "id": "dazi",
+      "term": { "zh": "搭子", "en": "Activity Partner" },
+      "pinyin": "da zi",
+      "category": "life",
+      "difficulty": 1,
+      "def": {
+        "zh": "为吃饭、健身、看展等某件具体的事临时结伴的人，关系轻，不需要深交，散了也不用刻意维持。",
+        "en": "A temporary companion for one specific activity such as eating, working out or seeing a show, with a light bond that needs no deep friendship."
+      },
+      "usage": {
+        "zh": "她在网上找了个饭搭子，一周拼了三次火锅。",
+        "en": "She found a meal partner online and they shared hotpot three times in one week."
+      },
+      "tags": ["轻社交", "临时结伴", "具体活动"],
+      "firstSeen": "2026-08-12"
+    },
+    {
+      "id": "chill",
+      "term": { "zh": "松弛感", "en": "Chill Attitude" },
+      "pinyin": "song chi gan",
+      "category": "life",
+      "difficulty": 1,
+      "def": {
+        "zh": "整个人看起来不赶时间、不焦虑输赢的从容状态，被很多人当成理想的生活气质，也常被夸成高级感。",
+        "en": "A relaxed state of not rushing and not being anxious about winning, which many people now treat as the ideal way to be."
+      },
+      "usage": {
+        "zh": "飞机延误三小时，她还坐在那儿看书，满是松弛感。",
+        "en": "With the flight delayed three hours, she just sat reading with total chill."
+      },
+      "tags": ["从容", "不焦虑", "生活态度"],
+      "firstSeen": "2026-08-29"
+    },
+    {
+      "id": "citywalk",
+      "term": { "zh": "citywalk", "en": "Citywalk" },
+      "pinyin": "city walk",
+      "category": "life",
+      "difficulty": 1,
+      "def": {
+        "zh": "不设明确目的、沿着街道慢慢走，随性发现城市角落和店铺的休闲散步方式，常配一杯咖啡走一下午。",
+        "en": "A casual way of wandering city streets with no fixed goal, discovering corners and small shops at an easy pace."
+      },
+      "usage": {
+        "zh": "周末没什么安排，就去老城区citywalk。",
+        "en": "With no plans for the weekend, we went on a citywalk through the old town."
+      },
+      "tags": ["散步", "城市漫游", "随性"],
+      "firstSeen": "2026-08-07"
+    },
+    {
+      "id": "cyber-wellness",
+      "term": { "zh": "赛博养生", "en": "Cyber Wellness" },
+      "pinyin": "sai bo yang sheng",
+      "category": "life",
+      "difficulty": 2,
+      "def": {
+        "zh": "一边熬夜一边靠保健品、按摩仪和手机提醒自我安慰的年轻人养生方式，朋克又带着心虚。",
+        "en": "A young people's health routine that mixes late nights with supplements, massage devices and phone reminders to feel healthy anyway."
+      },
+      "usage": {
+        "zh": "凌晨两点吃护肝片，这就是赛博养生。",
+        "en": "Taking liver pills at two in the morning is cyber wellness in action."
+      },
+      "tags": ["矛盾养生", "保健品", "熬夜"],
+      "firstSeen": "2026-10-31"
+    },
+    {
+      "id": "digital-nomad",
+      "term": { "zh": "数字游民", "en": "Digital Nomad" },
+      "pinyin": "shu zi you min",
+      "category": "life",
+      "difficulty": 1,
+      "def": {
+        "zh": "靠网络远程工作、每隔一段时间就换个城市生活旅居，不受固定办公室约束的人，常聚集在低价宜居的小城。",
+        "en": "People who work remotely over the internet and move to a different city every so often, free from a fixed office."
+      },
+      "usage": {
+        "zh": "他在大理做数字游民，上午开会下午爬山。",
+        "en": "He lives as a digital nomad in Dali, taking calls in the morning and hiking in the afternoon."
+      },
+      "tags": ["远程办公", "旅居", "自由地点"],
+      "firstSeen": "2026-09-01"
+    },
+    {
+      "id": "side-hustle",
+      "term": { "zh": "副业", "en": "Side Hustle" },
+      "pinyin": "fu ye",
+      "category": "life",
+      "difficulty": 1,
+      "def": {
+        "zh": "在本职工作之外，利用业余时间经营的第二个收入来源，常见的有自媒体、网店和接单跑腿。",
+        "en": "A second income stream run in spare time outside a main job, commonly through content accounts or online shops, often used to test an idea before quitting."
+      },
+      "usage": {
+        "zh": "白天上班，晚上做副业卖手作。",
+        "en": "He works by day and runs a side hustle selling handmade goods at night."
+      },
+      "tags": ["第二收入", "业余时间", "变现"],
+      "firstSeen": "2026-08-05"
+    },
+    {
+      "id": "camping",
+      "term": { "zh": "露营", "en": "Camping" },
+      "pinyin": "lu ying",
+      "category": "life",
+      "difficulty": 1,
+      "def": {
+        "zh": "带上帐篷和装备到郊外或营地过夜，用一顿烧烤和一夜星空换掉城市的周末，装备越买越多。",
+        "en": "Heading to the countryside or a campsite with a tent and gear to spend the night, trading the city weekend for a barbecue and a sky full of stars."
+      },
+      "usage": {
+        "zh": "这家人每个周末都去露营，后备箱塞满了装备。",
+        "en": "The family camps every weekend, the trunk packed with gear."
+      },
+      "tags": ["户外过夜", "帐篷", "周末"],
+      "firstSeen": "2026-08-21"
+    },
+    {
+      "id": "frisbee",
+      "term": { "zh": "飞盘", "en": "Frisbee" },
+      "pinyin": "fei pan",
+      "category": "life",
+      "difficulty": 2,
+      "def": {
+        "zh": "在草坪上多人传接飞盘、规则简单易上手的户外运动，社交属性比竞技性更强，也被当成认识新朋友的场合。",
+        "en": "An easy-to-learn outdoor game where a group passes a disc across a lawn, valued more for the social side than for competition."
+      },
+      "usage": {
+        "zh": "公司的飞盘局每周三晚上在草坪上。",
+        "en": "The company frisbee game is on the lawn every Wednesday evening."
+      },
+      "tags": ["草坪运动", "轻竞技", "社交"],
+      "firstSeen": "2026-09-28"
+    },
+    {
+      "id": "ban-wei",
+      "term": { "zh": "班味", "en": "Work Fatigue Vibe" },
+      "pinyin": "ban wei",
+      "category": "life",
+      "difficulty": 2,
+      "def": {
+        "zh": "长期上班留下的疲惫、麻木和公式化气质，同事一眼就能从状态里认出来，休假也散不掉。",
+        "en": "The weary, numb and scripted air that long office hours leave on a person, recognizable to colleagues at a glance."
+      },
+      "usage": {
+        "zh": "假期回来才三天，班味又上来了。",
+        "en": "Only three days back from holiday and the work fatigue vibe returned."
+      },
+      "tags": ["职场疲惫", "状态", "自嘲"],
+      "firstSeen": "2026-10-16"
+    },
+    {
+      "id": "inner-stability",
+      "term": { "zh": "内核稳定", "en": "Inner Stability" },
+      "pinyin": "nei he wen ding",
+      "category": "life",
+      "difficulty": 3,
+      "def": {
+        "zh": "有清晰的自我评价标准，不被外界评价和突发状况轻易带偏的心理状态，遇事先稳住再处理。",
+        "en": "A mental state with a clear inner yardstick, where outside opinions and sudden events cannot easily knock you off course."
+      },
+      "usage": {
+        "zh": "被骂了一整轮，她还是很平静，内核稳定得厉害。",
+        "en": "She took a full round of criticism calmly, her inner stability impressive."
+      },
+      "tags": ["自我评价", "情绪稳定", "心理状态"],
+      "firstSeen": "2026-10-23"
+    },
+    {
+      "id": "decluttering",
+      "term": { "zh": "断舍离", "en": "Decluttering" },
+      "pinyin": "duan she li",
+      "category": "life",
+      "difficulty": 2,
+      "def": {
+        "zh": "主动扔掉不必要的东西、减少占有，让房间和心态都清爽起来的整理理念，处理旧物时也顺带放下执念。",
+        "en": "A tidying philosophy of actively discarding what is not needed and owning less, so both the room and the mind feel lighter."
+      },
+      "usage": {
+        "zh": "她断舍离了一整个衣柜，心情都变好了。",
+        "en": "She decluttered her entire wardrobe and her mood improved with it."
+      },
+      "tags": ["整理", "极简", "舍弃"],
+      "firstSeen": "2026-09-25"
+    },
+    {
+      "id": "humanoid-robot",
+      "term": { "zh": "人形机器人", "en": "Humanoid Robot" },
+      "pinyin": "ren xing ji qi ren",
+      "category": "tech",
+      "difficulty": 1,
+      "def": {
+        "zh": "外形和关节结构模仿人类、能在为人设计的环境里走动和操作工具的双足机器人，常被拿来补工厂的缺工。",
+        "en": "A two-legged robot whose shape and joints imitate a person, letting it walk and handle tools in spaces built for humans."
+      },
+      "usage": {
+        "zh": "工厂里试用人形机器人搬箱子，走路还有点笨。",
+        "en": "The factory is trialing humanoid robots to move boxes, though they still walk a bit clumsily."
+      },
+      "tags": ["双足", "类人外形", "机器人"],
+      "firstSeen": "2026-08-15"
+    },
+    {
+      "id": "bci",
+      "term": { "zh": "脑机接口", "en": "Brain-Computer Interface" },
+      "pinyin": "nao ji jie kou",
+      "category": "tech",
+      "difficulty": 2,
+      "def": {
+        "zh": "把大脑神经信号直接翻译成设备指令、让意念控制外设的技术通道，已用于康复训练和实验室研究。",
+        "en": "A technical channel that translates brain signals directly into device commands so thought can control equipment, already used in rehab and lab trials."
+      },
+      "usage": {
+        "zh": "脑机接口让瘫痪患者用意念重新打出了字。",
+        "en": "The brain-computer interface let a paralyzed patient type again by thought."
+      },
+      "tags": ["神经信号", "意念控制", "康复"],
+      "firstSeen": "2026-10-04"
+    },
+    {
+      "id": "autonomous-driving",
+      "term": { "zh": "自动驾驶", "en": "Autonomous Driving" },
+      "pinyin": "zi dong jia shi",
+      "category": "tech",
+      "difficulty": 1,
+      "def": {
+        "zh": "车辆靠摄像头和雷达感知路况、由算法自主完成转向、加速与刹车的驾驶能力，目前仍要求人随时接管。",
+        "en": "A vehicle's ability to sense the road with cameras and radar and handle steering, acceleration and braking through algorithms alone."
+      },
+      "usage": {
+        "zh": "这段高速他全程开自动驾驶，手都没怎么碰方向盘。",
+        "en": "On the highway he stayed on autonomous driving the whole way, barely touching the wheel."
+      },
+      "tags": ["感知路况", "无人驾驶", "算法"],
+      "firstSeen": "2026-09-06"
+    },
+    {
+      "id": "quantum-computing",
+      "term": { "zh": "量子计算", "en": "Quantum Computing" },
+      "pinyin": "liang zi ji suan",
+      "category": "tech",
+      "difficulty": 2,
+      "def": {
+        "zh": "利用量子的叠加和纠缠并行处理信息，在密码破解和药物模拟等特定问题上远超经典计算机的路线。",
+        "en": "A computing route that uses quantum superposition and entanglement to process information in parallel, far outpacing classical machines on problems like cryptography and drug simulation."
+      },
+      "usage": {
+        "zh": "这家实验室的量子计算原型机又刷新了纪录。",
+        "en": "The lab's quantum computing prototype set another record."
+      },
+      "tags": ["叠加纠缠", "超算路线", "前沿"],
+      "firstSeen": "2026-09-26"
+    },
+    {
+      "id": "solid-state-battery",
+      "term": { "zh": "固态电池", "en": "Solid-state Battery" },
+      "pinyin": "gu tai dian chi",
+      "category": "tech",
+      "difficulty": 2,
+      "def": {
+        "zh": "用固态电解质替代易燃液态电解液的电池，能量密度更高、更耐高温也更安全，被视作电动车的下一站。",
+        "en": "A battery that replaces flammable liquid electrolyte with a solid one, packing more energy per kilogram and holding up better under heat."
+      },
+      "usage": {
+        "zh": "搭载固态电池的车，续航标称破了一千公里。",
+        "en": "The car with a solid-state battery claims over a thousand kilometers of range."
+      },
+      "tags": ["电解质", "能量密度", "电池"],
+      "firstSeen": "2026-10-08"
+    },
+    {
+      "id": "low-altitude-economy",
+      "term": { "zh": "低空经济", "en": "Low-altitude Economy" },
+      "pinyin": "di kong jing ji",
+      "category": "tech",
+      "difficulty": 2,
+      "def": {
+        "zh": "以无人机和飞行器在千米以下空域做载人、送货和巡检带动的产业群，外卖和急救都开始用上。",
+        "en": "The industry cluster around drones and aircraft flying below one kilometer, carrying people, delivering goods and inspecting facilities, from food delivery to emergency response."
+      },
+      "usage": {
+        "zh": "政策一放开，低空经济成了地方招商的热词。",
+        "en": "Once rules loosened, the low-altitude economy became a favorite for local investment pitches."
+      },
+      "tags": ["无人机", "空域", "载人送货"],
+      "firstSeen": "2026-10-27"
+    },
+    {
+      "id": "commercial-space",
+      "term": { "zh": "商业航天", "en": "Commercial Space" },
+      "pinyin": "shang ye hang tian",
+      "category": "tech",
+      "difficulty": 1,
+      "def": {
+        "zh": "由民营企业参与火箭发射、卫星制造和太空服务的产业，靠可回收和批量生产压低成本，发射报价年年降。",
+        "en": "The industry where private companies build rockets, satellites and space services, cutting cost through reusability and mass production, with launch prices falling every year."
+      },
+      "usage": {
+        "zh": "这家商业航天公司今年完成了第五次发射。",
+        "en": "The commercial space company completed its fifth launch this year."
+      },
+      "tags": ["民营火箭", "卫星", "降成本"],
+      "firstSeen": "2026-08-10"
+    },
+    {
+      "id": "satellite-internet",
+      "term": { "zh": "卫星互联网", "en": "Satellite Internet" },
+      "pinyin": "wei xing hu lian wang",
+      "category": "tech",
+      "difficulty": 2,
+      "def": {
+        "zh": "用成千上万颗低轨卫星组成星座，为地面基站覆盖不到的海上、山区和灾区提供宽带上网。",
+        "en": "A constellation of thousands of low-orbit satellites providing broadband to oceans, mountains and disaster zones that ground towers cannot cover."
+      },
+      "usage": {
+        "zh": "靠卫星互联网，救援队在深山里也能发消息。",
+        "en": "Thanks to satellite internet, the rescue team could send messages deep in the mountains."
+      },
+      "tags": ["低轨卫星", "宽带覆盖", "偏远地区"],
+      "firstSeen": "2026-09-12"
+    },
+    {
+      "id": "5g-a",
+      "term": { "zh": "5G-A", "en": "5G-Advanced" },
+      "pinyin": "5g a",
+      "category": "tech",
+      "difficulty": 2,
+      "def": {
+        "zh": "5G的增强版本，上传下载更快、时延更低，也是通信行业向6G过渡的中间阶段，基站只需软件升级。",
+        "en": "An enhanced version of 5G with faster speeds and lower latency, positioned as the stepping stone between 5G and 6G."
+      },
+      "usage": {
+        "zh": "换了5G-A套餐，下载电影只要十几秒。",
+        "en": "On a 5G-A plan, downloading a movie takes about ten seconds."
+      },
+      "tags": ["通信升级", "低时延", "过渡阶段"],
+      "firstSeen": "2026-09-29"
+    },
+    {
+      "id": "controlled-fusion",
+      "term": { "zh": "可控核聚变", "en": "Controlled Nuclear Fusion" },
+      "pinyin": "ke kong he ju bian",
+      "category": "tech",
+      "difficulty": 3,
+      "def": {
+        "zh": "模仿太阳内部反应、让轻原子核在受控条件下持续释放能量的发电路线，被视为终极清洁能源。",
+        "en": "A power route that mimics the sun, fusing light nuclei under control to release energy continuously, often called the ultimate clean energy source."
+      },
+      "usage": {
+        "zh": "可控核聚变一旦商用，电价可能被彻底改写。",
+        "en": "If controlled fusion goes commercial, electricity prices could be rewritten entirely."
+      },
+      "tags": ["清洁能源", "聚变", "长期路线"],
+      "firstSeen": "2026-10-21"
+    },
+    {
+      "id": "lithography",
+      "term": { "zh": "光刻机", "en": "Lithography Machine" },
+      "pinyin": "guang ke ji",
+      "category": "tech",
+      "difficulty": 2,
+      "def": {
+        "zh": "把电路图案精确投影到硅片上的核心芯片制造设备，它的精度直接决定芯片能做到多小、多省电。",
+        "en": "The core chip-making machine that projects circuit patterns precisely onto silicon wafers, its precision deciding how small a chip can be."
+      },
+      "usage": {
+        "zh": "没有高端光刻机，先进制程就卡在这一步。",
+        "en": "Without advanced lithography machines, the cutting-edge process node stalls right here."
+      },
+      "tags": ["芯片制造", "精度", "半导体设备"],
+      "firstSeen": "2026-09-04"
+    },
+    {
+      "id": "semiconductor",
+      "term": { "zh": "芯片", "en": "Chip" },
+      "pinyin": "xin pian",
+      "category": "tech",
+      "difficulty": 1,
+      "def": {
+        "zh": "手机里那块指甲盖大小、内部集成数十亿晶体管的半导体器件，是计算和存储的基础元件。",
+        "en": "The fingernail-sized semiconductor device in a phone that packs billions of transistors, the basic building block for computing and storage."
+      },
+      "usage": {
+        "zh": "这台手机换了一颗国产芯片。",
+        "en": "This phone runs on a domestically made chip."
+      },
+      "tags": ["半导体", "集成电路", "核心部件"],
+      "firstSeen": "2026-08-02"
+    },
+    {
+      "id": "edge-computing",
+      "term": { "zh": "边缘计算", "en": "Edge Computing" },
+      "pinyin": "bian yuan ji suan",
+      "category": "tech",
+      "difficulty": 2,
+      "def": {
+        "zh": "把数据处理放在离设备很近的本地节点上完成，减少往返云端的延迟和带宽消耗，适合工厂和路口。",
+        "en": "Processing data at local nodes close to the devices instead of round-tripping to the cloud, cutting latency and bandwidth use."
+      },
+      "usage": {
+        "zh": "工厂用边缘计算做质检，反应比传回云端快得多。",
+        "en": "The factory uses edge computing for quality checks, far faster than sending data to the cloud."
+      },
+      "tags": ["本地节点", "低延迟", "带宽节省"],
+      "firstSeen": "2026-10-13"
+    }
+  ]
+}
