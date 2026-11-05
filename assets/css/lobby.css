@@ -1045,3 +1045,89 @@ body:not([data-view="home"]) .arch-cell.is-played .ac-meta {
   opacity: 1 !important;
   font-weight: 600 !important;
 }
+
+/* 最终黑体字：所有灰色信息文字统一为近黑色，保留语义色状态 */
+body,
+body[data-view="home"],
+body:not([data-view="home"]),
+body p,
+body span,
+body li,
+body small,
+body label,
+body summary,
+body dt,
+body dd,
+body button,
+body input,
+body textarea {
+  color: #111827;
+}
+
+.brand,
+.date,
+.date .weekday,
+.title-sub,
+.cta-hint,
+.menu-zh,
+.menu-state,
+.panel-lead,
+.quiz-meta,
+.fineprint,
+.kbd-hint,
+.rule-list li,
+.review summary,
+.review-list li,
+.result-sub,
+.result-score-unit,
+.result-line,
+.word-card .wc-def,
+.arch-cell .ac-meta,
+.arch-words .aw-def,
+.board-score small,
+.search input,
+.search input::placeholder,
+.chip,
+.tab-btn,
+.modal-def,
+.modal-usage,
+.modal-tags span,
+.modal-foot,
+#arch-range,
+.arch-cell span,
+.arch-cell small {
+  color: #111827 !important;
+  opacity: 1 !important;
+  font-weight: 600 !important;
+}
+
+.menu-en,
+.panel-title,
+.q-def,
+.result-score-num,
+.word-card .wc-term,
+.arch-cell .ac-date,
+.board-name,
+.modal-title,
+.title-main {
+  color: #050b16 !important;
+  font-weight: 700 !important;
+}
+
+.title-kicker,
+.q-cat,
+.rule-list b,
+.result-grade,
+.word-card .wc-en,
+.menu-state,
+.chev,
+.tab-btn.is-active,
+.chip.is-active {
+  color: #4b2b08 !important;
+  font-weight: 700 !important;
+}
+
+.option { color: #050b16 !important; font-weight: 600 !important; }
+.option .opt-key { color: #2f1b05 !important; font-weight: 700 !important; }
+.option.is-correct { color: #0b4a2d !important; }
+.option.is-wrong { color: #6b1f18 !important; }
